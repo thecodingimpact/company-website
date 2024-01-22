@@ -2,19 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=], initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="contact.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <title>The Coding Impact</title>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -29,10 +24,7 @@
             <a href="" class="logo">
               <div class="images">
                 <h2>
-                  <a href="../index.html"
-                    >The Coding Impact<span>.</span>
-                    <i class="ri-home-2-fill"></i>
-                  </a>
+                  <a href="../index.html">The Coding Impact<span>.</span><i class="ri-home-2-fill"></i></a>
                 </h2>
               </div>
             </a>
@@ -57,68 +49,38 @@
             <div class="form__wrapper">
               <div class="contact__heading">
                 <h1>Lets Work Together<span>.</span></h1>
-                <p class="text">
-                  Or reach us via:
-                  <a href="mailto:thecodingimpact@gmail.com">
-                    thecodingimpact@gmail.com
-                  </a>
-                </p>
+                <p class="text">Or reach us via: <a href="mailto:thecodingimpact@gmail.com">thecodingimpact@gmail.com</a></p>
               </div>
 
               <form action="contact.html" method="post" class="contact__form">
                 <div class="input__wrap">
-                  <input
-                    class="contact__input"
-                    autocomplete="off"
-                    name="First Name"
-                    type="text"
-                    required
-                  />
+                  <input class="contact__input" autocomplete="off" name="First Name" type="text" required />
                   <label>First Name</label>
                   <i class="icon fa-solid fa-address-card"></i>
                 </div>
 
                 <div class="input__wrap">
-                  <input
-                    class="contact__input"
-                    autocomplete="off"
-                    name="Last Name"
-                    type="tel"
-                    required
-                  />
+                  <input class="contact__input" autocomplete="off" name="Last Name" type="tel" required />
                   <label>Phone Number</label>
                   <i class="icon fa-solid fa-address-card"></i>
                 </div>
 
                 <div class="input__wrap w-100">
-                  <input
-                    class="contact__input"
-                    autocomplete="off"
-                    name="Email"
-                    type="text"
-                    required
-                  />
+                  <input class="contact__input" autocomplete="off" name="Email" type="text" required />
                   <label>Email</label>
                   <i class="icon fa-solid fa-envelope"></i>
                 </div>
 
                 <div class="input__wrap textarea w-100">
-                  <textarea
-                    class="contact__input"
-                    name="Message"
-                    autocomplete="off"
-                    required
-                  ></textarea>
+                  <textarea class="contact__input" name="Message" autocomplete="off" required></textarea>
                   <label>Message</label>
                   <i class="icon fa-solid fa-inbox"></i>
                 </div>
 
                 <div class="contact__buttons">
                   <button class="btn upload">
-                    <span>
-                      <i class="fa-solid fa-paperclip"></i> Add Attachement
-                    </span>
-                    <input type="file" name="attachement" />
+                    <span><i class="fa-solid fa-paperclip"></i> Add Attachment</span>
+                    <input type="file" name="attachment" />
                   </button>
                   <input type="submit" value="Send message" class="btn" />
                 </div>
@@ -130,15 +92,8 @@
             <div class="image__wrapper">
               <img class="img" src="sea.jpg" alt="" />
               <div class="wave__wrap">
-                <svg
-                  class="wave"
-                  viewBox="0 0 783 1536"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    id="wave"
-                    d="M236.705 1356.18C200.542 1483.72 64.5004 1528.54 1 1535V1H770.538C793.858 63.1213 797.23 196.197 624.165 231.531C407.833 275.698 274.374 331.715 450.884 568.709C627.393 805.704 510.079 815.399 347.561 939.282C185.043 1063.17 281.908 1196.74 236.705 1356.18Z"
+                <svg class="wave" viewBox="0 0 783 1536" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path id="wave" d="M236.705 1356.18C200.542 1483.72 64.5004 1528.54 1 1535V1H770.538C793.858 63.1213 797.23 196.197 624.165 231.531C407.833 275.698 274.374 331.715 450.884 568.709C627.393 805.704 510.079 815.399  347.561 939.282C185.043 1063.17 281.908 1196.74 236.705 1356.18Z"
                   />
                 </svg>
               </div>
@@ -161,9 +116,8 @@
 
     <script src="contact.js"></script>
     
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
 
   </body>
 </html>
