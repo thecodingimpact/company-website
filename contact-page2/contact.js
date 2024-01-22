@@ -29,4 +29,43 @@ toggleBtn.addEventListener("click", () => {
   });
 });
 
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
 
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the database
+const database = firebase.database();
+
+// Get the form element
+const form = document.querySelector('#myForm');
+
+// Add submit event listener
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Get input field values
+  const firstName = document.querySelector('input[name="First Name"]').value;
+  const lastName = document.querySelector('input[name="Last Name"]').value;
+  const email = document.querySelector('input[name="Email"]').value;
+  const message = document.querySelector('textarea[name="Message"]').value;
+
+  // Save data to Firebase
+  database.ref('menu').push({
+    firstName,
+    lastName,
+    email,
+    message
+  });
+
+  // ... (Email.js code for sending email)
+});
