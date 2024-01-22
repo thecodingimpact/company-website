@@ -1,46 +1,43 @@
-const inputs = document.querySelectorAll('.contact__input')
+// Adding focus and blur event listeners to input fields
+const inputs = document.querySelectorAll('.contact__input');
 
 inputs.forEach(ipt => {
-    ipt.addEventListener("focus", () => {
-        ipt.parentNode.classList.add("focus")
-        ipt.parentNode.classList.add("not-empty")
-    })
-    ipt.addEventListener("blur", () => {
-        if (ipt.value == "") {
-            ipt.parentNode.classList.remove("not-empty")
-        }
+  ipt.addEventListener("focus", () => {
+    ipt.parentNode.classList.add("focus");
+    ipt.parentNode.classList.add("not-empty");
+  });
+  ipt.addEventListener("blur", () => {
+    if (ipt.value === "") {
+      ipt.parentNode.classList.remove("not-empty");
+    }
+    ipt.parentNode.classList.remove("focus");
+  });
+});
 
-        ipt.parentNode.classList.remove("focus")
-    })
-})
-
-
-// -------------------------color changing bg------------------------------------
-
-const toggleBtn = document.querySelector(".theme-toggle")
-const allElements = document.querySelectorAll("*")
-
+// Toggle dark mode and transition effect
+const toggleBtn = document.querySelector(".theme-toggle");
+const allElements = document.querySelectorAll("*");
 
 toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark")
+  document.body.classList.toggle("dark");
 
-allElements.forEach(el => {
-    el.classList.add('transition')
-    setTimeout(() =>{
-        el.classList.remove("transition")
-    }, 1000)
-})
-})
-// -------------------------backend-----------------------------------
+  allElements.forEach(el => {
+    el.classList.add('transition');
+    setTimeout(() => {
+      el.classList.remove("transition");
+    }, 1000);
+  });
+});
+
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDMSGsbkHALvkiS4mcBdRmx__ybdz_pA18",
-  authDomain: "chat-app-bf22d.firebaseapp.com",
-  databaseURL: "https://chat-app-bf22d-default-rtdb.firebaseio.com",
-  projectId: "chat-app-bf22d",
-  storageBucket: "chat-app-bf22d.appspot.com",
-  messagingSenderId: "961267170800",
-  appId: "1:961267170800:web:e6a72daf5d7ed80cb9b135"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  databaseURL: "YOUR_DATABASE_URL",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
 
 // Initialize Firebase
@@ -51,8 +48,6 @@ const database = firebase.database();
 
 // Get the form element
 const form = document.querySelector('#myForm');
-
-// ... (previous code)
 
 // Add submit event listener
 form.addEventListener('submit', async (e) => {
@@ -87,19 +82,19 @@ form.addEventListener('submit', async (e) => {
   updateViewerCount();
 
   // Initialize Email.js with the Public Key
-  emailjs.init("RlxjAgahjJR2mPZ92");
+  emailjs.init("YOUR_PUBLIC_KEY");
 
   // Prepare email template parameters
   const templateParams = {
     to_email: 'furqancoder1@gmail.com',
     from_name: 'teapack534@gmail.com',
     subject: 'Form Submission',
-    message: Name: ${name}\nEmail: ${email}\nContact Number: ${contactNo}\nPurpose: ${purpose}
+    message: `Name: ${name}\nEmail: ${email}\nContact Number: ${contactNo}\nPurpose: ${purpose}`
   };
 
   // Define your Email.js service ID and template ID
-  const emailjsServiceId = 'service_4qs7xct';
-  const emailjsTemplateId = 'template_5ufavk6';
+  const emailjsServiceId = 'YOUR_SERVICE_ID';
+  const emailjsTemplateId = 'YOUR_TEMPLATE_ID';
 
   // Send email using Email.js
   emailjs.send(emailjsServiceId, emailjsTemplateId, templateParams)
