@@ -31,15 +31,14 @@ toggleBtn.addEventListener("click", () => {
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_DATABASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDMSGsbkHALvkiS4mcBdRmx__ybdz_pA18",
+  authDomain: "chat-app-bf22d.firebaseapp.com",
+  databaseURL: "https://chat-app-bf22d-default-rtdb.firebaseio.com",
+  projectId: "chat-app-bf22d",
+  storageBucket: "chat-app-bf22d.appspot.com",
+  messagingSenderId: "961267170800",
+  appId: "1:961267170800:web:e6a72daf5d7ed80cb9b135"
 };
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
