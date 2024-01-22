@@ -40,8 +40,9 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID"
 };
 
-// Initialize Firebase
+// Initialize Firebase with your configuration
 firebase.initializeApp(firebaseConfig);
+
 
 // Get a reference to the database
 const database = firebase.database();
