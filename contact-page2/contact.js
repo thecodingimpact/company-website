@@ -106,8 +106,10 @@ form.addEventListener('submit', async (e) => {
   emailjs.send(emailjsServiceId, emailjsTemplateId, templateParams)
     .then((response) => {
       console.log('Email sent successfully:', response);
+      alert('Your message is recorded. Our team will contact you soon');
     })
     .catch((error) => {
       console.error('Error sending email:', error);
+          alert('There was an error submitting your message. Please try again later.');
     });
 });
