@@ -107,6 +107,8 @@ form.addEventListener('submit', async (e) => {
     .then((response) => {
       console.log('Email sent successfully:', response);
       alert('Your message is recorded. Our team will contact you soon');
+        location.reload();
+
     })
     .catch((error) => {
       console.error('Error sending email:', error);
