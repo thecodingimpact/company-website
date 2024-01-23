@@ -89,7 +89,7 @@ form.addEventListener('submit', async (e) => {
   const mail = document.querySelector('#mail').value;
 
   // Save data to Firebase
-  database.ref('menu').push({
+  database.ref('mail').push({
      mail
   });
 
