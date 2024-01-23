@@ -1134,3 +1134,130 @@ aside .pages {
   width: 60px;
   border: 1px solid;
 }
+
+
+/* <!------------------------------------------------ Footer ------------------------------------------> */
+
+footer {
+  background: #150725;
+  padding: 120px 0 0 0;
+}
+.footer-hr .flex {
+  rotate: -90deg;
+}
+.footer-hr h6 {
+  color: #fff;
+  letter-spacing: 3.72px;
+  text-transform: uppercase;
+}
+.footer-hr h3 {
+  margin-top: 125px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.footer-hr p {
+  color: #fff;
+  padding: 0 300px;
+  margin: 20px 0 30px 0;
+}
+.footer-hr hr {
+  opacity: 1.25;
+  height: 1px;
+  color: #fff;
+  width: 60px;
+  border: 1px solid;
+}
+footer form {
+  border-radius: 50px;
+  border: 1px solid #6d2f8a;
+  background: #381a46;
+  width: 76%;
+  margin: auto;
+}
+footer form input {
+  background-color: #381a46;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  color: #fff;
+  width: 68%;
+}
+footer form button {
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+footer form button:hover {
+  color: #7436bb;
+}
+#footer-message {
+  width: auto;
+  height: auto;
+  color: green;
+  /* background-color: #fff; */
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  /* position: fixed; */
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  border-radius: 10px;
+  transition: display all 0.3s ease;
+}
+.footer-menu {
+  background: linear-gradient(0deg, #471133 0%, #140921 100%);
+  color: #fff;
+  padding: 50px 0;
+  margin-top: 77px;
+}
+.footer-menu img {
+  width: 100px !important;
+  filter: brightness(0), invert(1);
+  margin-bottom: 5px;
+}
+
+.footer-menu ul li {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+}
+.footer-menu ul li a:hover {
+  color: #f54a48;
+}
+.footer-menu i {
+  font-size: 20px;
+  background: linear-gradient(0deg, #f54a48 0.5%, #fa982f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 10px;
+}
+.footer-menu h4 {
+  color: #f57c48;
+  margin-bottom: 26px;
+}
+.footer-menu a {
+  padding: 0 !important;
+  color: #fff;
+}
+
+.footer-menu p {
+  padding: 0 78px 0 0;
+}
+
+.copywrite {
+  background: #150725;
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateX(30rem);
+}
+
