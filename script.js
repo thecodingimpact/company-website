@@ -60,6 +60,29 @@ function open_img(evt, cityname) {
   document.getElementById(cityname).style.display = "block";
   evt.currentTarget.classList.add("active");
 }
+
+// --------------- Back to Top btn -------------------------
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("backToTop").style.display = "block";
+  } else {
+    document.getElementById("backToTop").style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  const scrollToTopBtn = document.documentElement || document.body;
+  scrollToTopBtn.scrollIntoView({
+    behavior: "smooth",
+  });
+}
+
+
          // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDMSGsbkHALvkiS4mcBdRmx__ybdz_pA18",
