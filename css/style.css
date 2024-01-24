@@ -121,6 +121,7 @@ section {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   /* overflow-x: hidden; */
 }
 
@@ -418,7 +419,7 @@ nav li a.active,
 }
 
 .nav-right {
-  transform: translate(60rem, -28px);
+  transform: translate(68rem, -28px);
   color: white;
 }
 .nav-right p {
@@ -1050,6 +1051,36 @@ aside .pages {
   width: 60px;
 }
 
+.imp-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.imp-line span {
+  color: #f54a48;
+  font-size: 30px;
+}
+.imp-line h5 {
+  margin-bottom: 20px;
+}
+.services-btn-impLine .btn-hover2 {
+  padding: 20px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Barlow", sans-serif;
+  margin: 0 30px;
+}
+.services-btn-impLine i {
+  font-size: 50px;
+  margin: 20px 20px;
+  background: linear-gradient(0deg, #f54a48 0.5%, #fa982f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 10px;
+}
+
 /* <!------------------------------------------------ Work section ------------------------------------------> */
 
 .work {
@@ -1135,6 +1166,110 @@ aside .pages {
   border: 1px solid;
 }
 
+/* <!------------------------------------------------ Team section ------------------------------------------> */
+
+.team {
+  background-image: url("../Images/bg/experience_bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  padding: 120px 0 0 0;
+}
+.team h5 {
+  color: #fff;
+  letter-spacing: 1px;
+}
+.team h2 {
+  color: #fff;
+  padding: 0 212px 0 0;
+}
+.team p {
+  color: #d3c9c1;
+  padding: 0 184px 0 0;
+}
+.team .team-hr1 {
+  color: #b520a3;
+  opacity: 1.25;
+  height: 1px;
+  width: 60px;
+  border: 1px solid;
+}
+.team a {
+  padding: 15px 30px;
+  border: 1.5px solid #ff8c4b;
+}
+.team-slider {
+  overflow: hidden;
+  display: flex;
+}
+.team-img {
+  min-width: 304px;
+  object-fit: cover;
+  position: relative;
+  background-repeat: no-repeat;
+}
+.team-img img {
+  width: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+.team-des-container {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-1rem);
+  margin-bottom: 20px;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #7436bb66 28%, #b520a378 68%);
+  overflow: hidden;
+  height: 0;
+  width: 100%;
+  transition: 0.5s ease;
+}
+.team-img:hover .overlay {
+  height: 100%;
+}
+.overlay-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+.overlay-text h4 {
+  margin: 6px 0 15px 0;
+}
+.overlay-text i {
+  color: #fff;
+  font-size: 20px;
+}
+.overlay-text a {
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.overlay-text a:hover {
+  background-color: #fff;
+}
+.overlay-text a:hover i {
+  color: #150725;
+}
+.overlay-text .flex a:first-child {
+  padding: 8px 13px !important;
+}
+
+.team-btn {
+  background: linear-gradient(0deg, #471133 0%, #140921 100%);
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 50px;
+  text-transform: uppercase;
+}
 
 /* <!------------------------------------------------ Footer ------------------------------------------> */
 
@@ -1261,3 +1396,71 @@ footer form button:hover {
   transform: translateX(30rem);
 }
 
+.links-footer {
+  margin: 0 150px;
+  transform: translateX(-10rem);
+}
+.details-footer {
+  transform: translateX(-10rem);
+}
+.details-footer ul li {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+}
+.socials-footer i {
+  font-size: 30px;
+  padding: 20px 20px;
+}
+.socials-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(8rem);
+}
+
+/* <!--------------------- Back to top btn ---------------> */
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  border: none;
+  padding: 17px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: #d12bec;
+  z-index: 99999999999999999;
+  display: none;
+}
+#backToTop:hover {
+  color: #fff;
+}
+
+#instagrmBar {
+  position: fixed;
+  bottom: 89px;
+  right: 27px;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 99999999999999999;
+  /* display: none; */
+}
+#instagrmBar i {
+  font-size: 40px;
+  color: black;
+}
+
+/* <!--------------------- ScrollBar ---------------> */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(42deg, #7436bb 0.01%, #b520a3 100%);
+  border-radius: 5px;
+}
