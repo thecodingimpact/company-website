@@ -1081,6 +1081,13 @@ aside .pages {
   margin-right: 10px;
 }
 
+.imp-line a {
+  font-weight: bold;
+  font-size: 25px;
+  color: #ff0149;
+  padding: 0 10px;
+}
+
 /* <!------------------------------------------------ Work section ------------------------------------------> */
 
 .work {
