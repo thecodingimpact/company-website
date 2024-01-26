@@ -144,8 +144,7 @@ form.addEventListener('submit', async (e) => {
     });
 });
     // Get a reference to the Firebase Realtime Database
-    const database = firebase.database();
-    console.log('Firebase Realtime Database reference obtained');
+
 
     // Function to open the modal
     function openModal() {
