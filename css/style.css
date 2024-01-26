@@ -1471,3 +1471,96 @@ footer form button:hover {
   background: linear-gradient(42deg, #7436bb 0.01%, #b520a3 100%);
   border-radius: 5px;
 }
+/* Flexbox utility class */
+.flex {
+  display: flex;
+}
+
+/* Flexbox utility class with gap */
+.gap-1 > * + * {
+  margin-left: 1rem;
+}
+
+
+/* Add to cart button styles */
+.add-to-cart-btn {
+  background-color: #4caf50; /* Green button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Cart container styles */
+.cart-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.cart-container h2 {
+  margin-top: 0;
+}
+
+.cart-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-container li {
+  margin-bottom: 0.5rem;
+}
+
+.cart-container button {
+  background-color: #ff5722; /* Orange button for place order */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-container button:hover {
+  background-color: #f44336; /* Darker orange on hover */
+}
+
+/* View cart button styles */
+#viewCartBtn {
+  background-color: #2196f3; /* Blue button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#viewCartBtn:hover {
+  background-color: #0b7dda; /* Darker blue on hover */
