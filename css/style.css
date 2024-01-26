@@ -1560,7 +1560,7 @@ footer form button:hover {
 
 
 
- /* <!------------------------------------------------ Breakpoints ------------------------------------------> */
+/* <!------------------------------------------------ Breakpoints ------------------------------------------> */
 @media screen and (max-width: 1400px) {
   .container {
     max-width: 1140px;
@@ -2166,4 +2166,3 @@ footer form button:hover {
     width: 105% !important;
   }
 }
-
