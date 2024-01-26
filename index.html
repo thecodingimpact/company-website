@@ -482,35 +482,64 @@ Check them out." </p>
               </div>
               <hr>
             </div>
-            <div class="s-card flex gap-1">
-              <div class="service-card">
-                <figure><img class="flex-center" src="Images/icon/slider1.png" alt="slider1"></figure>
-                <h3>Standard Plan</h3>
-                  <li>Website frontend</li>
-                  <li>Website backendend</li>
-                  <li>website deployment</li>
-              </div>
-              <div class="service-card">
-                <figure><img class="flex-center" src="Images/icon/slider2.png" alt="slider2"></figure>
-                <h3 class="premium">Premium Plan</h3>
-                  <li>Website frontend</li>
-                  <li>Website backendend</li>
-                  <li>website deployment</li>
-                  <li>Copywritting</li>
-                  <li>backend payment gateway integration</li>
-                  <li>Frontend cool animations</li>
-              </div>
-              <div class="service-card">
-                <figure><img class="flex-center" src="Images/icon/slider3.png" alt="slider3"></figure>
-                <h3 class="platinum">Platinum Plan</h3>
-                  <li>Website front-end</li>
-                  <li>Website backend-end</li>
-                  <li>Copywritting</li>
-                  <li>backend payment integration</li>
-                  <li>frontend cool animations</li>
-                  <li>Seo optimization</li>
-              </div>
-            </div>
+              <div class="s-card flex gap-1">
+    <div class="service-card">
+      <figure><img class="flex-center" src="Images/icon/slider1.png" alt="slider1"></figure>
+      <h3>Standard Plan</h3>
+      <ul>
+        <li>Website frontend</li>
+        <li>Website backend</li>
+        <li>website deployment</li>
+      </ul>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="service-card">
+      <figure><img class="flex-center" src="Images/icon/slider2.png" alt="slider2"></figure>
+      <h3 class="premium">Premium Plan</h3>
+      <ul>
+        <li>Website frontend</li>
+        <li>Website backend</li>
+        <li>website deployment</li>
+        <li>Copywriting</li>
+        <li>backend payment gateway integration</li>
+        <li>Frontend cool animations</li>
+      </ul>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="service-card">
+      <figure><img class="flex-center" src="Images/icon/slider3.png" alt="slider3"></figure>
+      <h3 class="platinum">Platinum Plan</h3>
+      <ul>
+        <li>Website front-end</li>
+        <li>Website backend-end</li>
+        <li>Copywriting</li>
+        <li>backend payment integration</li>
+        <li>frontend cool animations</li>
+        <li>SEO optimization</li>
+      </ul>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+  <!-- Modal for login/signup -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2>Login or Sign Up</h2>
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button id="loginBtn">Login</button>
+      <button id="signupBtn">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Cart container -->
+  <div class="cart-container">
+    <h2>Cart Items</h2>
+    <ul id="cartItemsList"></ul>
+    <button id="placeOrderBtn">Place Order</button>
+  </div>
+
+  <!-- View Cart Button -->
+  <button id="viewCartBtn">View Cart</button>
 
             <div class="imp-line">
               <h5><span>Don't Fit Here ?</span> No worries Click<a href="https://wa.me/+923152831124"><strong>Here</strong></a></h5>
@@ -738,7 +767,8 @@ Click below to Contact our experts and get to know what’s best for you</p> <sp
      <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
-
+    
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="script.js"></script>
 
     <!-- Scroll animation lib -->
