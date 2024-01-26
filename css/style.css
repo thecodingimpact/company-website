@@ -1471,15 +1471,7 @@ footer form button:hover {
   background: linear-gradient(42deg, #7436bb 0.01%, #b520a3 100%);
   border-radius: 5px;
 }
-/* Flexbox utility class */
-.flex {
-  display: flex;
-}
 
-/* Flexbox utility class with gap */
-.gap-1 > * + * {
-  margin-left: 1rem;
-}
 
 
 /* Add to cart button styles */
