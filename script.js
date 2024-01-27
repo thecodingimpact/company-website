@@ -164,6 +164,7 @@ form.addEventListener('submit', async (e) => {
     }
 
     // Event listener for the "View Cart" button
+docu// Event listener for the "View Cart" button
 document.getElementById('viewCartBtn').addEventListener('click', () => {
   const user = firebase.auth().currentUser;
   if (user) {
@@ -178,7 +179,7 @@ document.getElementById('viewCartBtn').addEventListener('click', () => {
         Object.entries(cartItems).forEach(([key, item]) => {
           const div = document.createElement('div');
           div.classList.add('cart-item');
-          div.textContent = `${item.name}: ${item.features.join(', ')}`;
+          div.textContent = `${item.name}`; // Only display the name property
           const deleteBtn = document.createElement('button');
           deleteBtn.textContent = 'Remove';
           deleteBtn.addEventListener('click', () => {
@@ -210,42 +211,40 @@ document.getElementById('viewCartBtn').addEventListener('click', () => {
     openModal();
   }
 });
-
     // Add event listeners to the "Add to Cart" buttons after DOM has loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-      addToCartButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-          console.log('Add to Cart button clicked');
+document.addEventListener('DOMContentLoaded', () => {
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  addToCartButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      console.log('Add to Cart button clicked');
 
-          // Check if user is logged in
-          const user = firebase.auth().currentUser;
-          if (user) {
-            // User is signed in, proceed with adding item to cart
-            const packageData = {
-              name: document.querySelectorAll('h3')[index].textContent
-            };
-            console.log('Package data captured:', packageData);
+      // Check if user is logged in
+      const user = firebase.auth().currentUser;
+      if (user) {
+        // User is signed in, proceed with adding item to cart
+        const packageData = {
+          name: document.querySelectorAll('h3')[index].textContent
+        };
+        console.log('Package data captured:', packageData);
 
-            // Save the package data in Firebase Realtime Database with the user's email ID as the key
-            const userEmail = user.email.replace('.', '_');
-            database.ref('cartItems/' + userEmail).push(packageData)
-              .then(() => {
-                console.log('Package data saved to Firebase Realtime Database');
-                showAlert('Item added to cart');
-              })
-              .catch(error => {
-                console.error('Error saving package data:', error);
-                showAlert('Error adding item to cart');
-              });
-          } else {
-            // User is not logged in, open modal to login or signup
-            openModal();
-          }
-        });
-      });
+        // Save the package data in Firebase Realtime Database with the user's email ID as the key
+        const userEmail = user.email.replace('.', '_');
+        database.ref('cartItems/' + userEmail).push(packageData)
+          .then(() => {
+            console.log('Package data saved to Firebase Realtime Database');
+            showAlert('Item added to cart');
+          })
+          .catch(error => {
+            console.error('Error saving package data:', error);
+            showAlert('Error adding item to cart');
+          });
+      } else {
+        // User is not logged in, open modal to login or signup
+        openModal();
+      }
     });
-
+  });
+});
     // Event listeners for modal buttons
     document.getElementById('loginBtn').addEventListener('click', () => {
       // Handle login logic here
