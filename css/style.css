@@ -1503,36 +1503,60 @@ footer form button:hover {
     background-color: rgba(0, 0, 0, 0.4);
   }
 
-  .modal-content {
-    background-color: #fefefe;
-    margin: 20% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    position: relative; /* Make it a positioned parent for the close button */
-  }
+.modal-content input {
+  width: 50%;
+  font-family: "barlow", sans-serif;
+  font-size: 20px;
+  background: #f0d7d7;
+  border: none;
+  outline: none;
+  padding: 1.5rem 1.35rem calc(0.75rem - 2px) 1.35rem;
+  font-weight: 600;
+  border-radius: 20px;
+  color: #3d0f41;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 0px var(--input-shadow);
+  transition: 0.3s;
+  margin: 15px;
+}
+.modal-content .btn-hover2,
+.modal-content .btn-hover1 {
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 75px;
+  margin: 10px;
+}}
 
   /* Close button style */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
+.close-btn {
+  position: absolute;
+  top: -2px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 55px;
+  transition: color 0.5s ease;
+}
+.close-btn:hover {
+  color: red;
+}
 
 /* Cart container styles */
 /* Cart container styles */
 .cart-container {
   display: none;
   margin-top: 20px;
-  background-color: #fefefe; /* Set background color for cart container */
+  background-color: #3d0f41; /* Set background color for cart container */
   padding: 20px;
-  border: 1px solid #888;
 }
 
 .cart-container h2 {
-  margin-top: 0;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Cart items container styles */
@@ -1543,6 +1567,13 @@ footer form button:hover {
 /* Cart item styles */
 .cart-item {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  color: #fff;
+  font-family: "barlow", sans-serif;
+  font-size: 20px;
 }
 
 .cart-container ul {
@@ -1559,9 +1590,15 @@ footer form button:hover {
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 0.5rem 1rem;
+  padding: 10px 15px;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.cart-container-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cart-container button:hover {
@@ -1573,16 +1610,23 @@ footer form button:hover {
   background-color: #2196f3; /* Blue button */
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  padding: 13px 17px;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.view-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 #viewCartBtn:hover {
   background-color: #0b7dda; /* Darker blue on hover */
 }
-}
+
 
 
 /* <!------------------------------------------------ Breakpoints ------------------------------------------> */
@@ -2173,6 +2217,7 @@ footer form button:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transform: translateX(-30px);
   }
   #footer-form {
     width: 100%;
@@ -2190,7 +2235,16 @@ footer form button:hover {
     font-size: 33px;
     width: 105% !important;
   }
+
+  .modal-content input {
+    width: 100%;
+    padding: 10px 10px;
+  }
+  .modal-content h2 {
+    margin-top: 50px;
+  }
 }
+
 
 
 
