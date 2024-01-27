@@ -1556,8 +1556,7 @@ footer form button:hover {
 
 #viewCartBtn:hover {
   background-color: #0b7dda; /* Darker blue on hover */
-
-
+}
 
 
 /* <!------------------------------------------------ Breakpoints ------------------------------------------> */
@@ -2166,4 +2165,6 @@ footer form button:hover {
     width: 105% !important;
   }
 }
-}
+
+
+
