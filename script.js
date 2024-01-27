@@ -164,51 +164,52 @@ form.addEventListener('submit', async (e) => {
     }
 
     // Event listener for the "View Cart" button
-    document.getElementById('viewCartBtn').addEventListener('click', () => {
-      const user = firebase.auth().currentUser;
-      if (user) {
-        // User is logged in, fetch and display cart items
-        const userEmail = user.email.replace('.', '_');
-        const cartItemsRef = database.ref('cartItems/' + userEmail);
-        cartItemsRef.once('value', (snapshot) => {
-          const cartItems = snapshot.val();
-          if (cartItems) {
-            const cartItemsList = document.getElementById('cartItemsList');
-            cartItemsList.innerHTML = ''; // Clear previous items
-            Object.entries(cartItems).forEach(([key, item]) => {
-              const li = document.createElement('li');
-              li.textContent = `${item.name}: ${item.features.join(', ')}`;
-              const deleteBtn = document.createElement('button');
-              deleteBtn.textContent = 'Remove';
-              deleteBtn.addEventListener('click', () => {
-                // Remove item from the cart
-                database.ref(`cartItems/${userEmail}/${key}`).remove()
-                  .then(() => {
-                    console.log('Item removed from cart');
-                    showAlert('Item removed from cart');
-                    // Remove the item from the DOM
-                    li.remove();
-                  })
-                  .catch(error => {
-                    console.error('Error removing item from cart:', error);
-                    showAlert('Error removing item from cart');
-                  });
+document.getElementById('viewCartBtn').addEventListener('click', () => {
+  const user = firebase.auth().currentUser;
+  if (user) {
+    // User is logged in, fetch and display cart items
+    const userEmail = user.email.replace('.', '_');
+    const cartItemsRef = database.ref('cartItems/' + userEmail);
+    cartItemsRef.once('value', (snapshot) => {
+      const cartItems = snapshot.val();
+      if (cartItems) {
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+        cartItemsContainer.innerHTML = ''; // Clear previous items
+        Object.entries(cartItems).forEach(([key, item]) => {
+          const div = document.createElement('div');
+          div.classList.add('cart-item');
+          div.textContent = `${item.name}: ${item.features.join(', ')}`;
+          const deleteBtn = document.createElement('button');
+          deleteBtn.textContent = 'Remove';
+          deleteBtn.addEventListener('click', () => {
+            // Remove item from the cart
+            database.ref(`cartItems/${userEmail}/${key}`).remove()
+              .then(() => {
+                console.log('Item removed from cart');
+                showAlert('Item removed from cart');
+                // Remove the item from the DOM
+                div.remove();
+              })
+              .catch(error => {
+                console.error('Error removing item from cart:', error);
+                showAlert('Error removing item from cart');
               });
-              li.appendChild(deleteBtn);
-              cartItemsList.appendChild(li);
-            });
-            // Show the cart container
-            document.querySelector('.cart-container').style.display = 'block';
-          } else {
-            // No items in the cart
-            showAlert('Your cart is empty. Add items to place an order.');
-          }
+          });
+          div.appendChild(deleteBtn);
+          cartItemsContainer.appendChild(div);
         });
+        // Show the cart container
+        document.querySelector('.cart-container').style.display = 'block';
       } else {
-            // User is not logged in, open modal to login or signup
-            openModal();
+        // No items in the cart
+        showAlert('Your cart is empty. Add items to place an order.');
       }
     });
+  } else {
+    // User is not logged in, open modal to login or signup
+    openModal();
+  }
+});
 
     // Add event listeners to the "Add to Cart" buttons after DOM has loaded
     document.addEventListener('DOMContentLoaded', () => {
@@ -329,3 +330,11 @@ form.addEventListener('submit', async (e) => {
         showAlert('You need to be logged in to place an order.');
       }
     });
+  // Function to close the modal
+  function closeModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+  }
+
+  // Event listener for the close button (x)
+  document.querySelector('.close-btn').addEventListener('click', closeModal);
