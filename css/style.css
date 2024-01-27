@@ -1474,6 +1474,7 @@ footer form button:hover {
 
 
 
+
 /* Add to cart button styles */
 .add-to-cart-btn {
   background-color: #4caf50; /* Green button */
@@ -1490,34 +1491,58 @@ footer form button:hover {
 }
 
 /* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 20% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
+  .modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: relative; /* Make it a positioned parent for the close button */
+  }
 
+  /* Close button style */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+/* Cart container styles */
 /* Cart container styles */
 .cart-container {
   display: none;
   margin-top: 20px;
+  background-color: #fefefe; /* Set background color for cart container */
+  padding: 20px;
+  border: 1px solid #888;
 }
 
 .cart-container h2 {
   margin-top: 0;
+}
+
+/* Cart items container styles */
+#cartItemsContainer {
+  padding: 10px 0;
+}
+
+/* Cart item styles */
+.cart-item {
+  margin-bottom: 10px;
 }
 
 .cart-container ul {
@@ -1556,6 +1581,7 @@ footer form button:hover {
 
 #viewCartBtn:hover {
   background-color: #0b7dda; /* Darker blue on hover */
+}
 }
 
 
