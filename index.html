@@ -509,22 +509,23 @@ Check them out." </p>
     </div>
   </div>
   <!-- Modal for login/signup -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <h2>Login or Sign Up</h2>
-      <input type="email" id="email" placeholder="Email">
-      <input type="password" id="password" placeholder="Password">
-      <button id="loginBtn">Login</button>
-      <button id="signupBtn">Sign Up</button>
-    </div>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span> <!-- Close button (x) -->
+    <h2>Login or Sign Up</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginBtn">Login</button>
+    <button id="signupBtn">Sign Up</button>
   </div>
+</div>
 
   <!-- Cart container -->
-  <div class="cart-container">
-    <h2>Cart Items</h2>
-    <ul id="cartItemsList"></ul>
-    <button id="placeOrderBtn">Place Order</button>
-  </div>
+<div class="cart-container">
+  <h2>Cart Items</h2>
+  <div id="cartItemsContainer"></div> <!-- Cart items container -->
+  <button id="placeOrderBtn">Place Order</button>
+</div>
 
   <!-- View Cart Button -->
   <button id="viewCartBtn">View Cart</button>
