@@ -223,8 +223,7 @@ document.getElementById('viewCartBtn').addEventListener('click', () => {
           if (user) {
             // User is signed in, proceed with adding item to cart
             const packageData = {
-              name: document.querySelectorAll('h3')[index].textContent,
-              features: Array.from(document.querySelectorAll('ul')[index].children).map(li => li.textContent)
+              name: document.querySelectorAll('h3')[index].textContent
             };
             console.log('Package data captured:', packageData);
 
