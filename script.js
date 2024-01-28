@@ -82,8 +82,44 @@ function scrollToTop() {
   });
 }
 
+//  ---------------------------------------------- Scroll Reveal---------------------------------
 
-         // Firebase configuration
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+  // reset: true
+});
+
+sr.reveal(`.hero, .portfolio-reveal, .ab-count, .service-reveal`);
+sr.reveal(`.project-reveal, .work-reveal-1 , .service-reveal-1`, {
+  delay: 500,
+  scale: 0.5,
+});
+sr.reveal(`.project-reveal-2, .work-reveal-2 , .service-reveal-2`, {
+  delay: 800,
+  scale: 0.5,
+});
+sr.reveal(`.project-reveal-3, .work-reveal-3, .service-reveal-3`, {
+  delay: 1200,
+  scale: 0.5,
+});
+sr.reveal(`.work-reveal-4`, {
+  delay: 1800,
+  scale: 0.5,
+});
+sr.reveal(`.feature-container, .footer-reveal , .team-btn`, {
+  delay: 800,
+  origin: `bottom`,
+});
+sr.reveal(`.hero-social-icon`, {
+  delay: 700,
+});
+sr.reveal(`.about-left, .team-des-container`, { origin: "left" });
+sr.reveal(`.contact__images, .team-slider`, { origin: "right" });
+
+// --------------------------------------------Firebase configuration------------------------------
 const firebaseConfig = {
   apiKey: "AIzaSyDMSGsbkHALvkiS4mcBdRmx__ybdz_pA18",
   authDomain: "chat-app-bf22d.firebaseapp.com",
@@ -91,7 +127,7 @@ const firebaseConfig = {
   projectId: "chat-app-bf22d",
   storageBucket: "chat-app-bf22d.appspot.com",
   messagingSenderId: "961267170800",
-  appId: "1:961267170800:web:e6a72daf5d7ed80cb9b135"
+  appId: "1:961267170800:web:e6a72daf5d7ed80cb9b135",
 };
 
 // Initialize Firebase
@@ -101,108 +137,109 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 // Get the form element
-const form = document.querySelector('#footer-form');
-
+const form = document.querySelector("#footer-form");
 
 // Add submit event listener
-form.addEventListener('submit', async (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   // Get input field values
-  const mail = document.querySelector('#mail').value;
+  const mail = document.querySelector("#mail").value;
 
   // Save data to Firebase
-  database.ref('maillist').push({
-     mail
+  database.ref("maillist").push({
+    mail,
   });
-
 
   // Initialize Email.js with the Public Key
   emailjs.init("RlxjAgahjJR2mPZ92");
 
   // Prepare email template parameters
   const templateParams = {
-    to_email: 'furqancoder1@gmail.com',
-    from_name: 'teapack534@gmail.com',
-    subject: 'Form Submission',
-    message: `Mail: ${mail}`
+    to_email: "furqancoder1@gmail.com",
+    from_name: "teapack534@gmail.com",
+    subject: "Form Submission",
+    message: `Mail: ${mail}`,
   };
 
   // Define your Email.js service ID and template ID
-  const emailjsServiceId = 'service_4qs7xct';
-  const emailjsTemplateId = 'template_5ufavk6';
+  const emailjsServiceId = "service_4qs7xct";
+  const emailjsTemplateId = "template_5ufavk6";
 
   // Send email using Email.js
-  emailjs.send(emailjsServiceId, emailjsTemplateId, templateParams)
+  emailjs
+    .send(emailjsServiceId, emailjsTemplateId, templateParams)
     .then((response) => {
-      console.log('Email sent successfully:', response);
-            alert('You are successfully added in our Mailing List');
+      console.log("Email sent successfully:", response);
+      alert("You are successfully added in our Mailing List");
       location.reload();
     })
     .catch((error) => {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
     });
 });
-    // Get a reference to the Firebase Realtime Database
+// Get a reference to the Firebase Realtime Database
 
+// Function to open the modal
+function openModal() {
+  const modal = document.getElementById("myModal");
+  modal.style.display = "block";
+}
 
-    // Function to open the modal
-    function openModal() {
-      const modal = document.getElementById('myModal');
-      modal.style.display = 'block';
-    }
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
 
-    // Function to close the modal
-    function closeModal() {
-      const modal = document.getElementById('myModal');
-      modal.style.display = 'none';
-    }
+// Function to display alerts for messages
+function showAlert(message) {
+  alert(message);
+}
 
-    // Function to display alerts for messages
-    function showAlert(message) {
-      alert(message);
-    }
-
-    // Event listener for the "View Cart" button
-document.getElementById('viewCartBtn').addEventListener('click', () => {
+// Event listener for the "View Cart" button
+document.getElementById("viewCartBtn").addEventListener("click", () => {
   const user = firebase.auth().currentUser;
   if (user) {
     // User is logged in, fetch and display cart items
-    const userEmail = user.email.replace('.', '_');
-    const cartItemsRef = database.ref('cartItems/' + userEmail);
-    cartItemsRef.once('value', (snapshot) => {
+    const userEmail = user.email.replace(".", "_");
+    const cartItemsRef = database.ref("cartItems/" + userEmail);
+    cartItemsRef.once("value", (snapshot) => {
       const cartItems = snapshot.val();
       if (cartItems) {
-        const cartItemsContainer = document.getElementById('cartItemsContainer');
-        cartItemsContainer.innerHTML = ''; // Clear previous items
+        const cartItemsContainer =
+          document.getElementById("cartItemsContainer");
+        cartItemsContainer.innerHTML = ""; // Clear previous items
         Object.entries(cartItems).forEach(([key, item]) => {
-          const div = document.createElement('div');
-          div.classList.add('cart-item');
-          div.textContent = `${item.name}: ${item.features.join(', ')}`;
-          const deleteBtn = document.createElement('button');
-          deleteBtn.textContent = 'Remove';
-          deleteBtn.addEventListener('click', () => {
+          const div = document.createElement("div");
+          div.classList.add("cart-item");
+          div.textContent = `${item.name}: ${item.features.join(", ")}`;
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "Remove";
+          deleteBtn.addEventListener("click", () => {
             // Remove item from the cart
-            database.ref(`cartItems/${userEmail}/${key}`).remove()
+            database
+              .ref(`cartItems/${userEmail}/${key}`)
+              .remove()
               .then(() => {
-                console.log('Item removed from cart');
-                showAlert('Item removed from cart');
+                console.log("Item removed from cart");
+                showAlert("Item removed from cart");
                 // Remove the item from the DOM
                 div.remove();
               })
-              .catch(error => {
-                console.error('Error removing item from cart:', error);
-                showAlert('Error removing item from cart');
+              .catch((error) => {
+                console.error("Error removing item from cart:", error);
+                showAlert("Error removing item from cart");
               });
           });
           div.appendChild(deleteBtn);
           cartItemsContainer.appendChild(div);
         });
         // Show the cart container
-        document.querySelector('.cart-container').style.display = 'block';
+        document.querySelector(".cart-container").style.display = "block";
       } else {
         // No items in the cart
-        showAlert('Your cart is empty. Add items to place an order.');
+        showAlert("Your cart is empty. Add items to place an order.");
       }
     });
   } else {
@@ -211,130 +248,141 @@ document.getElementById('viewCartBtn').addEventListener('click', () => {
   }
 });
 
-    // Add event listeners to the "Add to Cart" buttons after DOM has loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-      addToCartButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-          console.log('Add to Cart button clicked');
+// Add event listeners to the "Add to Cart" buttons after DOM has loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+  addToCartButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      console.log("Add to Cart button clicked");
 
-          // Check if user is logged in
-          const user = firebase.auth().currentUser;
-          if (user) {
-            // User is signed in, proceed with adding item to cart
-            const packageData = {
-              name: document.querySelectorAll('h3')[index].textContent,
-              features: Array.from(document.querySelectorAll('ul')[index].children).map(li => li.textContent)
-            };
-            console.log('Package data captured:', packageData);
-
-            // Save the package data in Firebase Realtime Database with the user's email ID as the key
-            const userEmail = user.email.replace('.', '_');
-            database.ref('cartItems/' + userEmail).push(packageData)
-              .then(() => {
-                console.log('Package data saved to Firebase Realtime Database');
-                showAlert('Item added to cart');
-              })
-              .catch(error => {
-                console.error('Error saving package data:', error);
-                showAlert('Error adding item to cart');
-              });
-          } else {
-            // User is not logged in, open modal to login or signup
-            openModal();
-          }
-        });
-      });
-    });
-
-    // Event listeners for modal buttons
-    document.getElementById('loginBtn').addEventListener('click', () => {
-      // Handle login logic here
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() => {
-          console.log('User logged in');
-          closeModal(); // Close the modal after successful login
-          showAlert('Logged in successfully');
-        })
-        .catch(error => {
-          console.error('Login error:', error.message);
-          showAlert('Login failed. Please check your email and password.');
-        });
-    });
-
-    document.getElementById('signupBtn').addEventListener('click', () => {
-      // Handle signup logic here
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          console.log('User signed up');
-          closeModal(); // Close the modal after successful signup
-          showAlert('Signed up successfully');
-        })
-        .catch(error => {
-          console.error('Signup error:', error.message);
-          showAlert('Signup failed. Please try again.');
-        });
-    });
-
-    // Event listener for the "Place Order" button
-    document.getElementById('placeOrderBtn').addEventListener('click', () => {
+      // Check if user is logged in
       const user = firebase.auth().currentUser;
       if (user) {
-        // User is logged in, ask for contact number and name
-        const contactNumber = prompt('Please enter your contact number:');
-        const name = prompt('Please enter your name:');
-        if (contactNumber && name) {
-          // Save order details to Firebase Realtime Database
-          const userEmail = user.email.replace('.', '_');
-          const cartItemsRef = database.ref('cartItems/' + userEmail);
-          cartItemsRef.once('value', (snapshot) => {
-            const cartItems = snapshot.val();
-            if (cartItems) {
-              const orderData = {
-                contactNumber: contactNumber,
-                name: name,
-                items: cartItems
-              };
-              database.ref('orders').push(orderData)
-                .then(() => {
-                  console.log('Order placed successfully');
-                  showAlert('Order placed successfully');
-                  // Clear the cart after placing the order
-                  cartItemsRef.remove()
-                    .then(() => {
-                      console.log('Cart cleared');
-                    })
-                    .catch(error => {
-                      console.error('Error clearing cart:', error);
-                      showAlert('Error clearing cart');
-                    });
-                  // Hide the cart container
-                  document.querySelector('.cart-container').style.display = 'none';
-                })
-                .catch(error => {
-                  console.error('Error placing order:', error);
-                  showAlert('Error placing order. Please try again.');
-                });
-            } else {
-              showAlert('Your cart is empty. Add items to place an order.');
-            }
+        // User is signed in, proceed with adding item to cart
+        const packageData = {
+          name: document.querySelectorAll("h3")[index].textContent,
+          features: Array.from(
+            document.querySelectorAll("ul")[index].children
+          ).map((li) => li.textContent),
+        };
+        console.log("Package data captured:", packageData);
+
+        // Save the package data in Firebase Realtime Database with the user's email ID as the key
+        const userEmail = user.email.replace(".", "_");
+        database
+          .ref("cartItems/" + userEmail)
+          .push(packageData)
+          .then(() => {
+            console.log("Package data saved to Firebase Realtime Database");
+            showAlert("Item added to cart");
+          })
+          .catch((error) => {
+            console.error("Error saving package data:", error);
+            showAlert("Error adding item to cart");
           });
-        } else {
-          showAlert('Contact number and name are required to place an order.');
-        }
       } else {
-        showAlert('You need to be logged in to place an order.');
+        // User is not logged in, open modal to login or signup
+        openModal();
       }
     });
-  // Function to close the modal
-  function closeModal() {
-    const modal = document.getElementById('myModal');
-    modal.style.display = 'none';
-  }
+  });
+});
 
-  // Event listener for the close button (x)
-  document.querySelector('.close-btn').addEventListener('click', closeModal);
+// Event listeners for modal buttons
+document.getElementById("loginBtn").addEventListener("click", () => {
+  // Handle login logic here
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log("User logged in");
+      closeModal(); // Close the modal after successful login
+      showAlert("Logged in successfully");
+    })
+    .catch((error) => {
+      console.error("Login error:", error.message);
+      showAlert("Login failed. Please check your email and password.");
+    });
+});
+
+document.getElementById("signupBtn").addEventListener("click", () => {
+  // Handle signup logic here
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log("User signed up");
+      closeModal(); // Close the modal after successful signup
+      showAlert("Signed up successfully");
+    })
+    .catch((error) => {
+      console.error("Signup error:", error.message);
+      showAlert("Signup failed. Please try again.");
+    });
+});
+
+// Event listener for the "Place Order" button
+document.getElementById("placeOrderBtn").addEventListener("click", () => {
+  const user = firebase.auth().currentUser;
+  if (user) {
+    // User is logged in, ask for contact number and name
+    const contactNumber = prompt("Please enter your contact number:");
+    const name = prompt("Please enter your name:");
+    if (contactNumber && name) {
+      // Save order details to Firebase Realtime Database
+      const userEmail = user.email.replace(".", "_");
+      const cartItemsRef = database.ref("cartItems/" + userEmail);
+      cartItemsRef.once("value", (snapshot) => {
+        const cartItems = snapshot.val();
+        if (cartItems) {
+          const orderData = {
+            contactNumber: contactNumber,
+            name: name,
+            items: cartItems,
+          };
+          database
+            .ref("orders")
+            .push(orderData)
+            .then(() => {
+              console.log("Order placed successfully");
+              showAlert("Order placed successfully");
+              // Clear the cart after placing the order
+              cartItemsRef
+                .remove()
+                .then(() => {
+                  console.log("Cart cleared");
+                })
+                .catch((error) => {
+                  console.error("Error clearing cart:", error);
+                  showAlert("Error clearing cart");
+                });
+              // Hide the cart container
+              document.querySelector(".cart-container").style.display = "none";
+            })
+            .catch((error) => {
+              console.error("Error placing order:", error);
+              showAlert("Error placing order. Please try again.");
+            });
+        } else {
+          showAlert("Your cart is empty. Add items to place an order.");
+        }
+      });
+    } else {
+      showAlert("Contact number and name are required to place an order.");
+    }
+  } else {
+    showAlert("You need to be logged in to place an order.");
+  }
+});
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+// Event listener for the close button (x)
+document.querySelector(".close-btn").addEventListener("click", closeModal);
