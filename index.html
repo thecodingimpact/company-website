@@ -1,1 +1,769 @@
-d4a5a357ff39852daa8d5ea75b57c538d5db31b9
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Coding Impact</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="Images/favicon-logo.png" />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Scroll cdn  -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/slick.min.css" />
+    <link rel="stylesheet" href="css/easy.css" />
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preload" data-preaload>
+      <div class="circle"></div>
+      <p class="text">The Coding Impact</p>
+    </div>
+
+    <div class="site-wrapper">
+      <div class="header-index">
+       <!------------------------------------------------ header section ------------------------------------------>
+        <header>
+          <nav>
+            <div class="container navbar">
+              <div class="container-nav flex">
+                <a href="#" class="navbar-logo"
+                  ><img class="logo" src="Images/logo 1.png"
+                /></a>
+                <button
+                  onclick="openNav()"
+                  class="navbar-toggler"
+                  type="button"
+                >
+                  <span class="fa-solid fa-bars"></span>
+                </button>
+                <ul class="navbar-nav flex">
+                  <li><a href="#" class="nav-link active">Home</a></li>
+                  <li><a href="#about" class="nav-link">About</a></li>
+                  <li>
+                    <a href="contact-page2/contact.html" class="nav-link"
+                      >Contact</a
+                    >
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Pages</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#portfolio" class="dropdown-items">Projects</a></li>
+                      <li><a href="#service" class="dropdown-items">Services</a></li>
+                      <li>
+                        <a href="#Roadmap" class="dropdown-items">Roadmap</a>
+                      </li>
+                      <li>
+                        <a href="#team" class="dropdown-items">Our Team</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-right flex">
+              <p>
+                Call Us:
+                <a href="tel:+923152831124"><span>+92-3152831124</span></a>
+            <a href="tel:+923353036639"><span>+92-3353036639</span></a>
+              </p>
+              <i onclick="rightOpenNav()" class="fa-solid fa-bars"></i>
+            </div>
+          </nav>
+          <!-- sidebar -->
+          <aside class="sidepanel" id="mysidepanel">
+            <div class="sidebar flex">
+              <a href="">
+                <img class="logo-sidebar" src="Images/logo 1.png" alt=""
+              /></a>
+              <button
+                onclick="closeNav()"
+                type="button"
+                class="closebtn btn_hover1"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <!-- -----------side menus--------------- -->
+            <ul>
+              <li><a href="#home" class="nav-link active">Home</a></li>
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li><a href="#portfolio" class="nav-link">Projects</a></li>
+              <li><a href="#service" class="nav-link">Services</a></li>
+              <li><a href="#Roadmap" class="nav-link">Roadmap</a></li>
+              <li><a href="#team" class="nav-link">Our Team</a></li>
+              <li><a href="contact-page2/contact.html" class="nav-link">Contact</a></li>  
+            </ul>
+          </aside>
+
+          <!-- -------------------Right Sidebar--------------------- -->
+
+          <section class="header-right-bar" id="right-side">
+            <div class="flex flex-sb">
+              <a href="#"
+                ><img class="logo" src="Images/logo 1.png" alt=""
+              /></a>
+              <button
+                onclick="rightCloseNav()"
+                class="close_rightsidebar fa-solid fa-xmark"
+              ></button>
+            </div>
+            <p class="right-side-text">
+              Welcome to <strong>The Coding Impact</strong>, where innovation
+              meets expertise. We are not just an IT agency; we're the
+              architects of digital transformation.
+            </p>
+            <a href="#about" class="btn-hover1">View More</a>
+            <hr />
+            <h4 class="right-side-heading">Connected Details</h4>
+            <ul class="flex right-side-container">
+              <li class="right-sub-container">
+                <a href="#"
+                  ><i class="fa-solid fa-phone right-side-links"></i
+                ></a>
+                <a
+                  href="tel:+923152831124"
+                  class="text-lowercase right-side-links"
+                  >+92-3152831124</a
+                >
+                <a
+                  href="tel:+923353036639"
+                  class="text-lowercase right-side-links"
+                  >+92-3353036639</a
+                >
+              </li>
+              <li class="right-sub-container">
+                <a href="#"
+                  ><i class="fa-solid fa-envelope right-side-links"></i
+                ></a>
+                <a
+                  href="mailto:info@thecodingimpact.com"
+                  class="right-side-links"
+                  >info@thecodingimpact.com</a
+                >
+              </li>
+              <li class="right-sub-container">
+                <a href="#"
+                  ><i class="fa-solid fa-regular fa-clock right-side-links"></i
+                ></a>
+                <a href="#" class="right-side-links">Avaliable 24/7</a>
+              </li>
+            </ul>
+            <span class="flex right-container-links">
+              <a href="https://www.instagram.com/thecodingimpact/"
+                ><i class="fa-brands fa-instagram right-side-links"></i
+              ></a>
+              <a href="#"
+                ><i class="fa-brands fa-facebook right-side-links"></i
+              ></a>
+              <a href="https://wa.me/+923152831124"
+                ><i class="fa-brands fa-whatsapp right-side-links"></i> ></a
+              >
+            </span>
+          </section>
+        </header>
+
+        <!------------------------------------------------ Hero section ------------------------------------------>
+
+        <section class="hero" id="hero">
+          <div class="container">
+            <div>
+              <div class="hero-social-icon flex">
+                <a href="https://www.instagram.com/thecodingimpact/"
+                  ><i class="fa-brands fa-instagram right-side-links"></i
+                ></a>
+                <a href="https://wa.me/+923152831124"
+                  ><i class="fa-brands fa-whatsapp right-side-links"></i
+                ></a>
+                <a href="mailto:info@thecodingimpact.com"
+                  ><i class="fa-regular fa-envelope"></i></i
+                ></a>
+                <hr />
+              </div>
+              <div class="center-data flex flex-col gap-1">
+                <h1>THE CODING IMPACT</h1>
+                <h3>BUILDING YOUR EMPIRE DIGITALLY</h3>
+                <div class="center-btn flex mt-1">
+                  <a href="contact-page2/contact.html" class="btn-hover1">Get Started</a>
+                  <a href="#portfolio" class="btn-hover2">Discover More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!------------------------------------------------ Feature section ------------------------------------------>
+      <section class="feature">
+        <div class="container feature-container">
+          <div class="flex">
+            <div class="header-card">
+              <div>
+                <figure>
+                  <img
+                    class="figure-img1"
+                    src="Images/icon/feature1.png"
+                    alt=""
+                  />
+                </figure>
+                <h4>Unique Design. Measurable Impact</h4>
+                <p>
+              Elevate digital presence with The Coding Impact's custom web design and development services specializing in crafting unique UI/UX experiences, driving traffic, and conversions for businesses
+                </p>
+              </div>
+            </div>
+            <div class="header-card">
+              <div>
+                <figure>
+                  <img src="Images/icon/feature2.png" alt="" />
+                </figure>
+                <h4> Web Development Services</h4>
+                <p>
+                  Tired of generic websites? We craft unique, pixel perfect experiences that wow your audience and skyrocket your conversions. Forget Templates. We Build Websites as Unique as Your Business.
+
+Don't Just Have a Website. Have a Website That Converts Visitors into Customers. 
+                </p>
+              </div>
+            </div>
+            <div class="header-card">
+              <div>
+                <figure>
+                  <img src="Images/icon/feature3.png" alt="" />
+                </figure>
+                <h4>Ditch AI, Get the Real Results</h4>
+                <p>
+                  Elevate your brand with the power of persuasive, human-crafted copy that connects with your audience and drives sales.
+                  Our experienced writers go beyond AI, weaving emotion, storytelling, and SEO best practices into every word. Forget generic, robotic text. 
+                </p>
+              </div>
+            </div>
+            <div class="header-card">
+              <div>
+                <figure>
+                  <img src="Images/icon/feature4.png" alt="" />
+                </figure>
+                <h4>Dominate Search, Human Driven SEO Solutions</h4>
+                <p>
+               Our Customized SEO solutions are designed to elevate your Brand, captivate users, and drive conversions.
+                  Experience the power of Data Driven SEO and watch your Website thrive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------------------------------------------ About section ------------------------------------------>
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about-data flex-sb">
+            <div class="w-50 about-left">
+              <div class="flex about-title gap-1">
+                <hr />
+                <h5>ABOUT US</h5>
+              </div>
+              <h2>Know Who We Are.</h2>
+              <p>
+                We are a professional web development agency enthused to help your business by increasing it’s online presence and credibility.
+                <br>
+                At <strong> THE CODING IMPACT </strong> We understand your needs and produce results specific to your goals.
+                <br>
+                Our team has worked with different businesses to construct their webpage and marketing funnels,
+                <br>
+                Click <a href="https://wa.me/+923152831124">here</a> to connect with our team now.
+              </p>
+              <div class="flex gap-1 about-tick">
+                <i class="fa-solid fa-check"></i>
+                <h5>Custom web-development</h5>
+              </div>
+              <div class="flex gap-1 about-tick">
+                <i class="fa-solid fa-check"></i>
+                <h5>Seo optimization</h5>
+              </div>
+              <div class="flex gap-1 about-tick">
+                <i class="fa-solid fa-check"></i>
+                <h5>Copywritting and digital markiting</h5>
+              </div>
+              <div class="center-btn flex mt-1">
+                <a href="contact-page2/contact.html" class="btn-hover1">Get Started</a>
+                <a href="#portfolio" class="btn-hover2">Discover More</a>
+              </div>
+            </div>
+            <div class="w-50 flex flex-center about-imgs">
+              <div>
+                <figure>
+                  <img src="Images/home/about.png" alt="" />
+                </figure>
+              </div>
+              <div class="ab-count flex flex-center">
+                <div class="flex flex-center">
+                  <h2>2</h2>
+                  <h2>+</h2>
+                </div>
+                <p>Years of experience</p>
+              </div>
+              <div class="about-hr flex gap-1">
+                <hr />
+                <h6>Who are we</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------------------------------------------ Portfolio section ------------------------------------------>
+    <section class="portfolio" id="portfolio">
+      <div class="portfolio-reveal">
+        <div class="portfolio-1">
+          <div class="container">
+            <div class="porto-center">
+              <div class="w-50">
+                <div class="flex gap-1">
+                  <hr class="gallery-hr1">
+                    <h5>PROJECTS</h5>
+                </div>
+                  <h2 class="mt-15">Check out our master projects here</h2>
+                </div>
+                <div class="flex w-100 flex-end">
+                  <a href="https://hamzashakeel7.github.io/resturant-website-2/" target="_blank" class="btn-hover2">Recent Project</a>
+                </div>
+                </hr>
+                <hr class="mt-3">
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery">
+            <div class="ga-bg"></div>
+            <!-- overlay -->
+            <span> </span>
+            <div class="container">
+              <!-- tab links -->
+              <div class="tab mt-15">
+                <button class="tablinks active" onclick="open_img(event, 'all')">All</button>
+                <button class="tablinks" onclick="open_img(event, 'frontend')">FRONTEND</button>
+                <button class="tablinks" onclick="open_img(event, 'backend')">BACKEND</button>
+                <button class="tablinks" onclick="open_img(event, 'copywritting')">COPYWRITTING</button>
+                <button class="tablinks" onclick="open_img(event, 'seo')">SEO</button>
+                <button class="tablinks" onclick="open_img(event, 'marketing')">MARKETING</button>
+              </div>
+              <!-- tab content -->
+              <div id="all" class="tabcontent" style="display: block;">
+                <div class="flex flex-center">
+                  <div class="flex w-100">
+                    <div class="w-33 project-reveal">
+                      <a href="https://hamzashakeel7.github.io/resturant-website-2/" target="_blank"><img src="Images/projects/resturant-frontend.png" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33 project-reveal">
+                      <a href="https://hamzashakeel7.github.io/GymWebsiteTitan/" target="_blank"><img src="Images/projects/gym-frontend.png" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33 project-reveal-2">
+                      <a href="https://hamzashakeel7.github.io/Bubble-game/" target="_blank"><img src="Images/projects/game-frontend.png" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33 project-reveal-2">
+                      <a href="https://hamzashakeel7.github.io/twogoodco/#" target="_blank"><img src="Images/projects/twogoodco-frontend.jpg" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33  project-reveal-3">
+                      <a href="https://hamzashakeel7.github.io/Fries-website/" target="_blank"><img src="Images/projects/fries-frontend.png" alt="sm-img"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="frontend" class="tabcontent">
+                <div class="flex flex-center">
+                  <div class="flex w-100">
+                    <div class="w-33">
+                      <a href="https://hamzashakeel7.github.io/resturant-website-2/" target="_blank"><img src="Images/projects/resturant-frontend.png" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33">
+                      <a href="https://hamzashakeel7.github.io/GymWebsiteTitan/" target="_blank"><img src="Images/projects/gym-frontend.png" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33">
+                      <a href="https://hamzashakeel7.github.io/Bubble-game/" target="_blank"><img src="Images/projects/game-frontend.png" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33">
+                      <a href="https://hamzashakeel7.github.io/twogoodco/#" target="_blank"><img src="Images/projects/twogoodco-frontend.jpg" alt="sm-img"></a>
+                    </div>
+                    <div class="w-33">
+                      <a href="https://hamzashakeel7.github.io/Fries-website/" target="_blank"><img src="Images/projects/fries-frontend.png" alt="sm-img"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="backend" class="tabcontent">
+                <div class="flex flex-center">
+                  <div class="flex w-100">
+                    <div class="w-33">
+                      <a href="https://hamzashakeel7.github.io/resturant-website-2/" target="_blank"><img src="Images/projects/resturant-frontend.png" alt="sm-img"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="copywritting" class="tabcontent">
+                <div class="flex flex-center">
+                  <div class="flex w-100">
+                  </div>
+                </div>
+              </div>
+
+              <div id="seo" class="tabcontent">
+                <div class="flex flex-center">
+                  <div class="flex w-100">
+                  </div>
+                </div>
+              </div>
+
+              <div id="marketing" class="tabcontent">
+                <div class="flex flex-center">
+                  <div class="flex w-100">
+                  </div>
+                </div>
+              </div>
+
+              <div id="design" class="tabcontent">
+                <div class="flex"></div>
+              </div>
+
+              <div class="gallery-hr flex flex-end gap-1">
+                <h6>CREATIVE SOLUTIONS</h6>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+      
+      <!------------------------------------------------ Services section ------------------------------------------>
+
+      <div class="service" id="service">
+        <div class="service-1">
+          <div class="container service-reveal">
+            <div class="service-data">
+              <div class="w-66">
+                <div class="flex gap-1">
+                  <hr class="service-hr1">
+                  <h5>OUR PLANS</h5>
+                </div>
+                <h2 class="mt-15">Plans We Offer</h2>
+                <p class="mt-15">
+                  "At our agency, we are bestowed to fulfill your unique demands for increasing your social media attraction,
+                    <br>
+                    Due to this, our diverse packages allow you to chose a plan where your goals conclude.
+                    <br>
+                    Check them out." </p>      
+              </div>
+              <hr>
+            </div>
+             <div class="s-card flex gap-1">
+              <div class="service-card service-reveal-1">
+                <figure><img class="flex-center" src="Images/icon/slider1.png" alt="slider1"></figure>
+                <h3>Standard Plan</h3>
+                  <li>Website front-end</li><br>
+                  <li>Website backend-end</li><br>
+                  <li>website deployment</li>
+              </div>
+              <div class="service-card service-reveal-2">
+                <figure><img class="flex-center" src="Images/icon/slider2.png" alt="slider2"></figure>
+                <h3 class="premium">Premium Plan</h3>
+                  <li>Website front-end</li><br>
+                  <li>Website backend-end</li><br>
+                  <li>website deployment</li><br>
+                  <li>Copywritting</li><br>
+                  <li>backend payment integration</li><br>
+                  <li>Front-end cool animations</li>
+              </div>
+              <div class="service-card service-reveal-3">
+                <figure><img class="flex-center" src="Images/icon/slider3.png" alt="slider3"></figure>
+                <h3 class="platinum">Platinum Plan</h3>
+                  <li>Website front-end</li><br>
+                  <li>Website backend-end</li><br>
+                  <li>Copywritting</li><br>
+                  <li>backend payment integration</li><br>
+                  <li>ront-end cool animations</li><br>
+                  <li>Seo optimization</li>
+              </div>
+            </div>
+
+            <div class="imp-line">
+              <h5><span>Don't Fit Here ?</span> No worries Click<a href="https://wa.me/+923152831124"><strong>Here</strong></a> for custom packages.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!------------------------------------------------ Work section ------------------------------------------>
+
+      <section class="work" id="Roadmap">
+        <div class="container p-relative">
+          <div class="work-para text-center">
+            <h5>HOW WE LEAD OUR CLIENTS.</h5>
+            <h2 class="mt-15">Process for delevring results.</h2>
+            <p>This is a progress diagram. This is how we start our development and provide the ultimate
+              best results to clients. </p>
+          </div>
+          <div class="work-hr flex gap-1">
+            <hr>
+            <h6>Project in steps</h6>
+          </div>
+
+          <div class="work-line flex flex-center gap-1 flex-wrap p-relative">
+            <div class="work-reveal-1">
+              <h2>01.</h2>
+              <h4>make an appointment</h4>
+            </div>
+            <div class="work-reveal-2">
+              <h2>02.</h2>
+              <h4>Meet Our Team</h4>
+            </div>
+            <div class="work-reveal-3">
+              <h2>03.</h2>
+              <h4>Project Consultaion</h4>
+            </div>
+            <div class="work-reveal-4">
+              <h2>04.</h2>
+              <h4>Start Project</h4>
+            </div>
+          </div>
+
+          <div class="flex flex-center">
+            <a class="btn-hover2" href="contact-page2/contact.html">Message Now</a>
+          </div>
+        </div>
+      </section>
+
+
+    <!------------------------------------------------ Team section ------------------------------------------>
+
+      <section class="team" id="team">
+        <div class="container">
+          <div class="flex team-center flex-col">
+            <div class="w-66 team-des-container">
+              <div class="gap-1 flex">
+                <hr class="team-hr1">
+                <h5>Meet The Team</h5>
+              </div>
+              <h2 class="mt-1">Meet our team professionals</h2>
+              <p class="mt-1">Welcome to our dynamic team where creativity meets technical prowess! Our dedicated squad is a synergy of skilled web developers, talented copywriters, and savvy SEO optimization experts. Together, we embark on a mission to bring your digital dreams to life. Our web developers craft seamless online experiences, ensuring every click is a journey of delight. The copywriters weave compelling narratives that resonate with your audience, giving your brand a voice that captivates. And behind the scenes, our SEO optimization maestros work their magic to ensure your digital presence stands out in the vast online landscape. Meet the faces behind the pixels, words, and algorithms a team passionate about turning your visions into vibrant, virtual reality.</p>
+            </div>
+            <div class="team-slider flex mt-15">
+
+              <div class="team-img">
+                <img src="Images/team-img/hamza-2.jpg" alt="guy">
+                <div class="overlay">
+                  <div class="overlay-text">
+                    <h3>Hamza Durrani</h3>
+                    <h4>Web Developer</h4>
+                    <div class="flex flex-center gap-1">
+                      <a href="https://www.instagram.com/hamza_shakeel7/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="team-img">
+                <img src="Images/team-img/furqan-2.jpg" alt="guy">
+                <div class="overlay">
+                  <div class="overlay-text">
+                    <h3>Muhammad Furqan Ali</h3>
+                    <h4>Web Developer</h4>
+                    <div class="flex flex-center gap-1">
+                      <a href="https://www.instagram.com/furqanali9991636/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="team-img">
+                <img src="Images/team-img/rehan-3.jpg" alt="guy">
+                <div class="overlay">
+                  <div class="overlay-text">
+                    <h3>Rehan Baig</h3>
+                    <h4>Copywritter</h4>
+                    <div class="flex flex-center gap-1">
+                      <a href="https://www.instagram.com/rehann_.3/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="team-img">
+                <img src="Images/team-img/umer-seo.jpg" alt="guy">
+                <div class="overlay">
+                  <div class="overlay-text">
+                    <h3>Umer Farooq</h3>
+                    <h4>SEO expert/Data Analyst</h4>
+                    <div class="flex flex-center gap-1">
+                      <a href="https://www.instagram.com/tagmeumer/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="team-btn">
+            <div class="container flex flex-sb gap-2 flex-wrap">
+              <h4>Ask a question to our amazing team, and get response quickly.</h4>
+              <a href="contact-page2/contact.html" class="btn-hover2">Contact Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+     <!------------------------------------------------ Footer section ------------------------------------------>
+
+       <footer>
+          <div class="footer-hr flex flex-col">
+            <div class="flex gap-1">
+              <hr>
+              <h6>Newsletter</h6>
+            </div>
+            <h3>JOIN OUR MAILING LIST</h3>
+            <p class="text-center">
+              Stay in the loop with our latest tech adventures! Subscribe to our newsletter and unlock a gateway to a world of innovation, updates, and IT insights</p>
+          </div>
+              <div id="footer-message">
+            <form action="#" id="footer-form" class="flex flex-sb gap-2">
+              <input type="mail" id="mail" required placeholder="Enter Your Mail">
+              <button type="submit" class="btn-hover1">Get Started</button>
+            </form>
+         </div>
+         <div class="footer-menu">
+          <div class="container footer-reveal">
+            <div class="footer-center flex flex-start">
+              <div class="w-33 flex flex-col gap-2 flex-start footer-left-content">
+                <a href="#"><img class="logo" src="Images/logo 1.png" alt="footer-log"></a>
+                <p>Want to work with us?<br>
+Click below to Contact our experts and get to know what’s best for you</p> <span class="flex gap-20 socials-footer">
+                  <a href="https://www.instagram.com/thecodingimpact/"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://wa.me/+923152831124"><i class="fa-brands fa-whatsapp"></i></a>
+                  <a href="mailto:info@thecodingimpact.com"><i class="fa-regular fa-envelope"></i></a>
+                </span>
+              </div>
+              <div class="w-16 mt-1 links-footer">
+                <h4>Quick Links</h4>
+                <ul class="flex flex-col gap-20 flex-star quick-link">
+                  <li><a href="#hero">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="contact-page2/contact.html">Contact</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#team">Our Team</a></li>
+                </ul>
+              </div>
+              <div class="w-33 mt-1 flex-col flex-start details-footer">
+                <h4>Get Connected</h4>
+                <ul class="flex flex-col gap-2 flex-start">
+                  <li class="right-sub-container">
+                    <a href="#"
+                      ><i class="fa-solid fa-phone right-side-links"></i
+                    ></a>
+                    <a
+                      href="tel:+923152831124"
+                      class="text-lowercase right-side-links"
+                      >+92-3152831124</a
+                    >
+                    <a
+                      href="tel:+923353036639"
+                      class="text-lowercase right-side-links"
+                      >+92-3353036639</a
+                    >
+                  </li>
+
+                  <li class="right-sub-container">
+                    <a href="#"
+                      ><i class="fa-solid fa-envelope right-side-links"></i
+                    ></a>
+                    <a
+                      href="mailto:info@thecodingimpact.com"
+                      class="right-side-links"
+                      >info@thecodingimpact.com</a
+                    >
+                  </li>
+
+                  <li class="right-sub-container">
+                    <a href="#"
+                      ><i class="fa-solid fa-regular fa-clock right-side-links"></i
+                    ></a>
+                    <a href="#" class="right-side-links">Avaliable 24/7</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+         </div>
+
+         <div class="copywrite">
+          <div class="container flex flex-sb gap-20 flex-wrap">
+            <h6>Copyright &copy; 2024 The Coding Impact</h6>
+          </div>
+         </div>
+        </footer>
+
+        <!----------------- Back to top btn ------------------>
+
+        <button onclick="scrollToTop()" class="btn-hover2" id="backToTop"><i class="fa-solid fa-angle-up"></i></button>
+        <button class="btn-hover2 instagrmBar" id="instagrmBar"><a href="https://www.instagram.com/thecodingimpact/"><i class="fa-brands fa-instagram"></i></a></button>
+
+        <script src="scrollreveal.min.js"></script>
+    
+     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Scroll animation lib -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 150,
+        duration: 1250,
+        once: true,
+      });
+    </script>
+
+    <!-- jquery js cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+      integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- jquery min js cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- slick carousel min js cdn -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+      integrity="sha256-DHF4zGyjT7GOMPBwpeehwoey18z8uiz98G4PRu2lV0A="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
