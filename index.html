@@ -473,34 +473,63 @@ Don't Just Have a Website. Have a Website That Converts Visitors into Customers.
               <hr>
             </div>
              <div class="s-card flex gap-1">
-              <div class="service-card service-reveal-1">
-                <figure><img class="flex-center" src="Images/icon/slider1.png" alt="slider1"></figure>
-                <h3>Standard Plan</h3>
-                  <li>Website front-end</li><br>
-                  <li>Website backend-end</li><br>
-                  <li>website deployment</li>
-              </div>
-              <div class="service-card service-reveal-2">
-                <figure><img class="flex-center" src="Images/icon/slider2.png" alt="slider2"></figure>
-                <h3 class="premium">Premium Plan</h3>
-                  <li>Website front-end</li><br>
-                  <li>Website backend-end</li><br>
-                  <li>website deployment</li><br>
-                  <li>Copywritting</li><br>
-                  <li>backend payment integration</li><br>
-                  <li>Front-end cool animations</li>
-              </div>
-              <div class="service-card service-reveal-3">
-                <figure><img class="flex-center" src="Images/icon/slider3.png" alt="slider3"></figure>
-                <h3 class="platinum">Platinum Plan</h3>
-                  <li>Website front-end</li><br>
-                  <li>Website backend-end</li><br>
-                  <li>Copywritting</li><br>
-                  <li>backend payment integration</li><br>
-                  <li>ront-end cool animations</li><br>
-                  <li>Seo optimization</li>
-              </div>
-            </div>
+                  <div class="service-card service-reveal-1">
+      <figure><img class="flex-center" src="Images/icon/slider1.png" alt="slider1"></figure>
+      <h3>Standard Plan</h3>
+      <ul>
+        <li>Website frontend</li>
+        <li>Website backend</li>
+        <li>website deployment</li>
+      </ul>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="service-card service-reveal-2">
+      <figure><img class="flex-center" src="Images/icon/slider2.png" alt="slider2"></figure>
+      <h3 class="premium">Premium Plan</h3>
+      <ul>
+        <li>Website frontend</li>
+        <li>Website backend</li>
+        <li>website deployment</li>
+        <li>Copywriting</li>
+        <li>backend payment gateway integration</li>
+        <li>Frontend cool animations</li>
+      </ul>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+    <div class="service-card service-reveal-3">
+      <figure><img class="flex-center" src="Images/icon/slider3.png" alt="slider3"></figure>
+      <h3 class="platinum">Platinum Plan</h3>
+      <ul>
+        <li>Website front-end</li>
+        <li>Website backend-end</li>
+        <li>Copywriting</li>
+        <li>backend payment integration</li>
+        <li>frontend cool animations</li>
+        <li>SEO optimization</li>
+      </ul>
+      <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </div>
+  <!-- Modal for login/signup -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2>Login or Sign Up</h2>
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button id="loginBtn">Login</button>
+      <button id="signupBtn">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- Cart container -->
+  <div class="cart-container">
+    <h2>Cart Items</h2>
+    <ul id="cartItemsList"></ul>
+    <button id="placeOrderBtn">Place Order</button>
+  </div>
+
+  <!-- View Cart Button -->
+  <button id="viewCartBtn">View Cart</button>
 
             <div class="imp-line">
               <h5><span>Don't Fit Here ?</span> No worries Click<a href="https://wa.me/+923152831124"><strong>Here</strong></a> for custom packages.</h5>
