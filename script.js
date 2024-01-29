@@ -197,7 +197,7 @@ function showAlert(message) {
   alert(message);
 }
 
-    // Event listener for the "View Cart" button
+    /* Event listener for the "View Cart" button
     document.getElementById('viewCartBtn').addEventListener('click', () => {
       const user = firebase.auth().currentUser;
       if (user) {
@@ -387,4 +387,4 @@ function closeModal() {
 }
 
 // Event listener for the close button (x)
-document.querySelector(".close-btn").addEventListener("click", closeModal);
+document.querySelector(".close-btn").addEventListener("click", closeModal); */
