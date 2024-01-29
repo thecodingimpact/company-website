@@ -249,36 +249,32 @@ document.getElementById("viewCartBtn").addEventListener("click", () => {
 });
 
 // Add event listeners to the "Add to Cart" buttons after DOM has loaded
-document.addEventListener("DOMContentLoaded", () => {
-  const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+document.addEventListener('DOMContentLoaded', () => {
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
   addToCartButtons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      console.log("Add to Cart button clicked");
+    button.addEventListener('click', () => {
+      console.log('Add to Cart button clicked');
 
       // Check if user is logged in
       const user = firebase.auth().currentUser;
       if (user) {
         // User is signed in, proceed with adding item to cart
         const packageData = {
-          name: document.querySelectorAll("h3")[index].textContent,
-          features: Array.from(
-            document.querySelectorAll("ul")[index].children
-          ).map((li) => li.textContent),
+          name: document.querySelectorAll('.service-card h3')[index].textContent.trim(),
+          features: Array.from(document.querySelectorAll('.service-card ul')[index].children).map(li => li.textContent.trim())
         };
-        console.log("Package data captured:", packageData);
+        console.log('Package data captured:', packageData);
 
         // Save the package data in Firebase Realtime Database with the user's email ID as the key
-        const userEmail = user.email.replace(".", "_");
-        database
-          .ref("cartItems/" + userEmail)
-          .push(packageData)
+        const userEmail = user.email.replace('.', '_');
+        database.ref('cartItems/' + userEmail).push(packageData)
           .then(() => {
-            console.log("Package data saved to Firebase Realtime Database");
-            showAlert("Item added to cart");
+            console.log('Package data saved to Firebase Realtime Database');
+            showAlert('Item added to cart');
           })
-          .catch((error) => {
-            console.error("Error saving package data:", error);
-            showAlert("Error adding item to cart");
+          .catch(error => {
+            console.error('Error saving package data:', error);
+            showAlert('Error adding item to cart');
           });
       } else {
         // User is not logged in, open modal to login or signup
@@ -287,6 +283,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function openModal() {
+  const modal = document.getElementById('myModal');
+  modal.style.display = 'block';
+}
+
+function showAlert(message) {
+  alert(message);
+}
+
 
 // Event listeners for modal buttons
 document.getElementById("loginBtn").addEventListener("click", () => {
