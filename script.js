@@ -102,11 +102,11 @@ sr.reveal(`.project-reveal-2, .work-reveal-2 , .service-reveal-2`, {
   scale: 0.5,
 });
 sr.reveal(`.project-reveal-3, .work-reveal-3, .service-reveal-3`, {
-  delay: 1200,
+  delay: 1000,
   scale: 0.5,
 });
 sr.reveal(`.work-reveal-4`, {
-  delay: 1800,
+  delay: 1300,
   scale: 0.5,
 });
 sr.reveal(`.feature-container, .footer-reveal , .team-btn`, {
