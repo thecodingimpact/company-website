@@ -964,6 +964,11 @@ aside .pages {
   width: 85%;
 }
 
+.overlay-text .project-title {
+  /* background-color: #2c003e; */
+  color: #d3c9c1;
+}
+
 /* <!------------------------------------------------ Services section ------------------------------------------> */
 
 .service-1 {
@@ -1343,7 +1348,6 @@ aside .pages {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 /* <!------------------------------------------------ Footer ------------------------------------------> */
 
@@ -2304,5 +2308,9 @@ footer form button:hover {
   }
   .modal-content h2 {
     margin-top: 50px;
+  }
+
+  .center-img {
+    transform: translateX(2rem);
   }
 }
