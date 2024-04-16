@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Location Tracker</title>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="firebase2.js"></script>
+    <script>
+  function saveLocation(position) {
+    const database = firebase.database();
+    const locationsRef = database.ref("locations");
+    locationsRef.push({
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude
+    });
+    alert("Location saved successfully!");
+  }
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(saveLocation);
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", getLocation);
+</script>
+</head>
+<body>
+</body>
+</html>
