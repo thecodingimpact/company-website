@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .task-container {
+            margin-bottom: 10px;
+        }
+    </style>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+</head>
+<body>
+    <h1>Welcome to To-Do List</h1>
+    <div id="taskList">
+        <!-- Tasks will be displayed here -->
+    </div>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add Task</button>
+
+    <script>
+var firebaseConfig = {
+    apiKey: "AIzaSyD6vrwfY9fNKAD9GeY0fjbT1de_RuZPlng",
+    authDomain: "salancer-444c7.firebaseapp.com",
+    databaseURL: "https://salancer-444c7-default-rtdb.firebaseio.com",
+    projectId: "salancer-444c7",
+    storageBucket: "salancer-444c7.appspot.com",
+    messagingSenderId: "238896914138",
+    appId: "1:238896914138:web:ff1750cd130c115a7b4fe3",
+    measurementId: "G-FEJ4F9VL2P"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+
+// Retrieve ID from cache
+var id = localStorage.getItem("uniqueId");
+
+function retrieveTasks() {
+    var taskListDiv = document.getElementById("taskList");
+    taskListDiv.innerHTML = ""; // Clear previous tasks
+    // Retrieve tasks from database and display
+    firebase.database().ref('users/' + id + '/tasks').once('value').then((snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            var taskId = childSnapshot.key; // Get the task ID
+            var task = childSnapshot.val().task;
+            var taskElement = document.createElement("div");
+            taskElement.textContent = task;
+            taskElement.style.marginBottom = "10px"; // Add space between tasks
+            var updateButton = document.createElement("button");
+            updateButton.textContent = "Update";
+            updateButton.style.marginLeft = "10px"; // Add space between update button and task
+            updateButton.onclick = function() {
+                updateTask(taskId);
+            };
+            var removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.style.marginLeft = "10px"; // Add space between remove button and task
+            removeButton.onclick = function() {
+                removeTask(taskId);
+            };
+            taskElement.appendChild(updateButton);
+            taskElement.appendChild(removeButton);
+            taskListDiv.appendChild(taskElement);
+        });
+    }).catch((error) => {
+        console.error("Error retrieving tasks:", error);
+    });
+}
+function removeTask(taskId) {
+    // Remove task from database
+    firebase.database().ref('users/' + id + '/tasks/' + taskId).remove().then(() => {
+        console.log("Task removed successfully.");
+        // Refresh task list after removing task
+        retrieveTasks();
+    }).catch((error) => {
+        console.error("Error removing task:", error);
+    });
+}
+
+// Call retrieveTasks initially to load tasks
+retrieveTasks();
+
+function addTask() {
+    var taskInput = document.getElementById("taskInput").value;
+    // Add task to database under user's ID
+    firebase.database().ref('users/' + id + '/tasks').push({
+        task: taskInput
+    }).then(() => {
+        console.log("Task added successfully.");
+        // Refresh task list after adding task
+        retrieveTasks();
+    }).catch((error) => {
+        console.error("Error adding task:", error);
+    });
+}
+// Retrieve ID from cache
+var id = localStorage.getItem("uniqueId");
+console.log("ID from cache:", id);
+function updateTask(taskId) {
+    var updatedTask = prompt("Enter the updated task:");
+    if (updatedTask !== null) {
+        // Update task in the database
+        firebase.database().ref('users/' + id + '/tasks/' + taskId).update({
+            task: updatedTask
+        }).then(() => {
+            console.log("Task updated successfully.");
+            // Refresh task list after updating task
+            retrieveTasks();
+        }).catch((error) => {
+            console.error("Error updating task:", error);
+        });
+    }
+}
+    </script>
+</body>
+</html>

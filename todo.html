@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Generator</title>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+</head>
+<body>
+    <h1> todo list <br>either create anew to do list or enter existing id to acess existing todo list.(remember save the id after creating the new id)</h1>
+    <button onclick="createId()">Create</button><br>
+    <button onclick="enterId()">Existing</button>
+    
+    <div id="idDisplay"></div>
+    
+    <!-- Firebase configuration -->
+    <script>
+var firebaseConfig = {
+    apiKey: "AIzaSyD6vrwfY9fNKAD9GeY0fjbT1de_RuZPlng",
+    authDomain: "salancer-444c7.firebaseapp.com",
+    databaseURL: "https://salancer-444c7-default-rtdb.firebaseio.com",
+    projectId: "salancer-444c7",
+    storageBucket: "salancer-444c7.appspot.com",
+    messagingSenderId: "238896914138",
+    appId: "1:238896914138:web:ff1750cd130c115a7b4fe3",
+    measurementId: "G-FEJ4F9VL2P"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+function createId() {
+    var id = generateUniqueId();
+    document.getElementById("idDisplay").innerHTML = "Your unique ID: " + id + "<br><button onclick='copyIdAndRedirect(\"" + id + "\")'>Copy and move ahead to the to do list</button>";
+    saveIdToCache(id);
+    saveIdToDatabase(id);
+}
+
+function copyIdAndRedirect(id) {
+    copyId(id);
+    setTimeout(() => {
+        redirectToNextPage();
+    }, 1000); // Delay of 1 second (1000 milliseconds)
+}
+
+function redirectToNextPage() {
+    window.location.replace("next.html");
+}
+
+function enterId() {
+    var existingId = prompt("Enter your existing ID:");
+    if (existingId !== null && existingId !== "") {
+        document.getElementById("idDisplay").innerHTML = "Your existing ID: " + existingId;
+        saveIdToCache(existingId);
+        redirectToNextPage();
+    }
+}
+
+function redirectToNextPage() {
+    window.location.replace("next.html");
+}
+
+function saveIdToDatabase(id) {
+    firebase.database().ref('users/' + id).set({
+        id: id
+    }, (error) => {
+        if (error) {
+            console.error("Error saving ID to database:", error);
+        } else {
+            console.log("ID saved to database.");
+            
+        }
+    });
+}        function generateUniqueId() {
+            return Math.floor(Math.random() * 90000000000000) + 10000000000000;
+        }
+
+        function copyId(id) {
+            var tempInput = document.createElement("input");
+            tempInput.value = id;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("ID copied to clipboard: " + id);
+        }
+
+        function saveIdToCache(id) {
+            // Code to save ID to cache (localStorage, sessionStorage, etc.) goes here
+             localStorage.setItem("uniqueId", id);
+        }
+
+        function saveIdToDatabase(id) {
+            firebase.database().ref('users/' + id).set({
+                id: id
+            }).then(() => {
+                console.log("ID saved to database.");
+            }).catch((error) => {
+                console.error("Error saving ID to database:", error);
+            });
+        }
+    </script>
+</body>
+</html>
