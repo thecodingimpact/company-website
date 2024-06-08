@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #6c63ff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .form-group input:focus {
+            border-color: #6c63ff;
+            outline: none;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffbf00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #e6a800;
+        }
+    </style>
+    <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+</head>
+<body>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <h2>Application Form</h2>
+        <form id="application-form">
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" name="job-title" readonly>
+            </div>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phone-number" required>
+            </div>
+            <div class="form-group">
+                <label for="education">Education</label>
+                <input type="text" id="education" name="education" required>
+            </div>
+            <div class="form-group">
+                <label for="github-link">GitHub Link</label>
+                <input type="url" id="github-link" name="github-link">
+            </div>
+            <div class="form-group">
+                <button type="submit">Apply</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCbHb_MfnMuSJSLQsNc_y2Rh3olX8Qt_B8",
+            authDomain: "new-check-entep.firebaseapp.com",
+            projectId: "new-check-entep",
+            storageBucket: "new-check-entep.appspot.com",
+            messagingSenderId: "825195389121",
+            appId: "1:825195389121:web:15cccdb2421ff0e8057440",
+            measurementId: "G-KQLJBJM649"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve job title from localStorage and populate the job title field
+            document.getElementById('job-title').value = localStorage.getItem('jobTitle') || '';
+        });
+
+        // Handle form submission
+        document.getElementById('application-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const jobTitle = document.getElementById('job-title').value;
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+            const education = document.getElementById('education').value;
+            const githubLink = document.getElementById('github-link').value;
+
+            const newInternRef = database.ref('interns').push();
+            newInternRef.set({
+                jobTitle: jobTitle,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phoneNumber: phoneNumber,
+                education: education,
+                githubLink: githubLink
+            }).then(() => {
+                alert('Application submitted successfully!');
+                document.getElementById('application-form').reset();
+            }).catch((error) => {
+                console.error("Error submitting application: ", error);
+                alert('Error submitting application. Please try again.');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .main-heading {
+            color: #6c63ff;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+        .dropdown select:hover {
+            border-color: #6c63ff;
+        }
+        .subheading {
+            color: #6c63ff;
+            font-size: 2em;
+            margin-top: 40px;
+        }
+        .description {
+            color: #555;
+            font-size: 1em;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #ffbf00;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Main Heading -->
+        <h1 class="main-heading">Career Opportunities</h1>
+
+        <!-- Dropdown for Job Titles -->
+        <div class="dropdown">
+            <select id="job-select">
+                <option value="">Select a Job</option>
+                <option value="frontend-developer">Frontend Developer</option>
+                <option value="digital-marketing">Digital Marketing</option>
+                <option value="graphic-design">Graphic Design</option>
+            </select>
+        </div>
+
+        <!-- Internship 2024 Section -->
+        <div id="frontend-developer">
+            <h2 class="subheading">Internships 2024: Frontend Developer</h2>
+            <p class="description">
+                Our Frontend Developer Internship is designed for beginner-level developers eager to enhance their skills. As an intern, you will work on real projects, gain hands-on experience with the latest web technologies, and collaborate with our experienced development team.
+            </p>
+            <p class="description">
+                Key Responsibilities:
+                <ul>
+                    <li>Assist in the development of web applications using HTML, CSS, and JavaScript.</li>
+                    <li>Collaborate with designers to implement user-friendly interfaces.</li>
+                    <li>Learn and apply best practices in web development and UI/UX design.</li>
+                    <li>Participate in code reviews and team meetings.</li>
+                </ul>
+            </p>
+            <p class="description">
+                Requirements:
+                <ul>
+                    <li>Basic understanding of HTML, CSS, and JavaScript.</li>
+                    <li>Strong willingness to learn and grow in a professional environment.</li>
+                    <li>Good communication and teamwork skills.</li>
+                    <li>Portfolio of personal or academic projects (optional but preferred).</li>
+                </ul>
+            </p>
+            <a href="#" class="button" onclick="applyNow('Frontend Developer')">Apply now</a>
+        </div>
+
+        <!-- Digital Marketing Internship -->
+        <div id="digital-marketing">
+            <h2 class="subheading">Digital Marketing</h2>
+            <p class="description">
+                Our Digital Marketing Internship is tailored for individuals who are passionate about online marketing and want to develop their skills in this field. Interns will gain practical experience in digital marketing strategies, social media management, and analytics.
+            </p>
+            <p class="description">
+                Key Responsibilities:
+                <ul>
+                    <li>Assist in creating and managing digital marketing campaigns.</li>
+                    <li>Monitor and analyze performance metrics and provide insights.</li>
+                    <li>Help manage social media accounts and create engaging content.</li>
+                    <li>Collaborate with the marketing team to implement strategies.</li>
+                </ul>
+            </p>
+            <p class="description">
+                Requirements:
+                <ul>
+                    <li>Basic knowledge of digital marketing principles.</li>
+                    <li>Familiarity with social media platforms and tools.</li>
+                    <li>Strong analytical and problem-solving skills.</li>
+                    <li>Excellent written and verbal communication skills.</li>
+                </ul>
+            </p>
+            <a href="#" class="button" onclick="applyNow('Digital Marketing')">Apply now</a>
+        </div>
+
+        <!-- Graphic Design Internship -->
+        <div id="graphic-design">
+            <h2 class="subheading">Graphic Design</h2>
+            <p class="description">
+                Our Graphic Design Internship is perfect for creative individuals looking to enhance their design skills. Interns will work on a variety of design projects, including branding, digital media, and print materials, and will have the opportunity to collaborate with our design team.
+            </p>
+            <p class="description">
+                Key Responsibilities:
+                <ul>
+                    <li>Create visual content for digital and print media.</li>
+                    <li>Collaborate with the design team on various projects.</li>
+                    <li>Assist in the development of branding materials.</li>
+                    <li>Learn and apply design best practices and techniques.</li>
+                </ul>
+            </p>
+            <p class="description">
+                Requirements:
+                <ul>
+                    <li>Basic knowledge of graphic design software (e.g., Adobe Creative Suite).</li>
+                    <li>Strong creativity and attention to detail.</li>
+                    <li>Good communication and teamwork skills.</li>
+                    <li>Portfolio of personal or academic design projects (optional but preferred).</li>
+                </ul>
+            </p>
+            <a href="#" class="button" onclick="applyNow('Graphic Design')">Apply now</a>
+        </div>
+
+    </div>
+
+    <script>
+        // Scroll to the selected job section
+        document.getElementById('job-select').addEventListener('change', function() {
+            var value = this.value;
+            if (value) {
+                document.getElementById(value).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Redirect to form.html and save job title in localStorage
+        function applyNow(jobTitle) {
+            localStorage.setItem('jobTitle', jobTitle);
+            window.location.href = 'form.html';
+        }
+    </script>
+
+</body>
+</html>
