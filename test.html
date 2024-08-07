@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math and IQ Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        #timer {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDEjKHWj3CEnVoMdjgTBQGR629jtpsDsPA",
+  authDomain: "web-app-400311.firebaseapp.com",
+  databaseURL: "https://web-app-400311-default-rtdb.firebaseio.com",
+  projectId: "web-app-400311",
+  storageBucket: "web-app-400311.appspot.com",
+  messagingSenderId: "674379075187",
+  appId: "1:674379075187:web:6091f9c6d4fd66b2c5e406",
+  measurementId: "G-QYSQ6CQC9K"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+</script>
+</head>
+<body>
+<form id="testForm">
+    <label for="username">Name:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <!-- Existing questions here -->
+</form>
+    <h1>Internship Test</h1>
+    
+    <p id="timer">Time Left: 01:00:00</p>
+    <form id="testForm">
+        <!-- Easier Questions -->
+        <div class="question">
+            <p>1. What is 15 + 27?</p>
+            <input type="radio" name="q1" value="42"> 42<br>
+            <input type="radio" name="q1" value="40"> 40<br>
+            <input type="radio" name="q1" value="38"> 38
+        </div>
+        <div class="question">
+            <p>2. What is 3 squared?</p>
+            <input type="radio" name="q2" value="9"> 9<br>
+            <input type="radio" name="q2" value="6"> 6<br>
+            <input type="radio" name="q2" value="12"> 12
+        </div>
+        <div class="question">
+            <p>3. What is the product of 8 and 7?</p>
+            <input type="radio" name="q3" value="56"> 56<br>
+            <input type="radio" name="q3" value="48"> 48<br>
+            <input type="radio" name="q3" value="64"> 64
+        </div>
+        <div class="question">
+            <p>4. What is 100 divided by 4?</p>
+            <input type="radio" name="q4" value="25"> 25<br>
+            <input type="radio" name="q4" value="20"> 20<br>
+            <input type="radio" name="q4" value="30"> 30
+        </div>
+        <div class="question">
+            <p>5. What is the square root of 144?</p>
+            <input type="radio" name="q5" value="12"> 12<br>
+            <input type="radio" name="q5" value="14"> 14<br>
+            <input type="radio" name="q5" value="16"> 16
+        </div>
+        <div class="question">
+            <p>6. What is 7% of 200?</p>
+            <input type="radio" name="q6" value="14"> 14<br>
+            <input type="radio" name="q6" value="12"> 12<br>
+            <input type="radio" name="q6" value="16"> 16
+        </div>
+        <div class="question">
+            <p>7. What is the area of a rectangle with length 5 and width 3?</p>
+            <input type="radio" name="q7" value="15"> 15<br>
+            <input type="radio" name="q7" value="18"> 18<br>
+            <input type="radio" name="q7" value="20"> 20
+        </div>
+        <div class="question">
+            <p>8. What is 50 minus 23?</p>
+            <input type="radio" name="q8" value="27"> 27<br>
+            <input type="radio" name="q8" value="25"> 25<br>
+            <input type="radio" name="q8" value="30"> 30
+        </div>
+        <div class="question">
+            <p>9. What is the sum of angles in a triangle?</p>
+            <input type="radio" name="q9" value="180"> 180<br>
+            <input type="radio" name="q9" value="360"> 360<br>
+            <input type="radio" name="q9" value="90"> 90
+        </div>
+        <div class="question">
+            <p>10. If a circle has a radius of 7, what is its diameter?</p>
+            <input type="radio" name="q10" value="14"> 14<br>
+            <input type="radio" name="q10" value="21"> 21<br>
+            <input type="radio" name="q10" value="28"> 28
+        </div>
+        <div class="question">
+            <p>11. What is the value of 3 cubed?</p>
+            <input type="radio" name="q11" value="27"> 27<br>
+            <input type="radio" name="q11" value="9"> 9<br>
+            <input type="radio" name="q11" value="18"> 18
+        </div>
+        <div class="question">
+            <p>12. How many minutes are in an hour?</p>
+            <input type="radio" name="q12" value="60"> 60<br>
+            <input type="radio" name="q12" value="50"> 50<br>
+            <input type="radio" name="q12" value="70"> 70
+        </div>
+        <div class="question">
+            <p>13. What is 9 divided by 3?</p>
+            <input type="radio" name="q13" value="3"> 3<br>
+            <input type="radio" name="q13" value="2"> 2<br>
+            <input type="radio" name="q13" value="4"> 4
+        </div>
+        <div class="question">
+            <p>14. How many sides does a hexagon have?</p>
+            <input type="radio" name="q14" value="6"> 6<br>
+            <input type="radio" name="q14" value="8"> 8<br>
+            <input type="radio" name="q14" value="5"> 5
+        </div>
+        <div class="question">
+            <p>15. What is the result of 20 + 15 - 5?</p>
+            <input type="radio" name="q15" value="30"> 30<br>
+            <input type="radio" name="q15" value="25"> 25<br>
+            <input type="radio" name="q15" value="35"> 35
+        </div>
+
+        <!-- Difficult Questions -->
+        <div class="question">
+            <p>16. What is the integral of x^2 dx?</p>
+            <input type="radio" name="q16" value="x^3/3 + C"> x^3/3 + C<br>
+            <input type="radio" name="q16" value="x^2 + C"> x^2 + C<br>
+            <input type="radio" name="q16" value="2x + C"> 2x + C
+        </div>
+        <div class="question">
+            <p>17. What is the derivative of sin(x)?</p>
+            <input type="radio" name="q17" value="cos(x)"> cos(x)<br>
+            <input type="radio" name="q17" value="-cos(x)"> -cos(x)<br>
+            <input type="radio" name="q17" value="-sin(x)"> -sin(x)
+        </div>
+        <div class="question">
+            <p>18. What is the probability of rolling a 4 on a fair six-sided die?</p>
+            <input type="radio" name="q18" value="1/6"> 1/6<br>
+            <input type="radio" name="q18" value="1/4"> 1/4<br>
+            <input type="radio" name="q18" value="1/3"> 1/3
+        </div>
+        <div class="question">
+            <p>19. Find the sum of the first 10 terms of the arithmetic progression: 2, 5, 8, ...</p>
+            <input type="radio" name="q19" value="185"> 185<br>
+            <input type="radio" name="q19" value="150"> 150<br>
+            <input type="radio" name="q19" value="200"> 200
+        </div>
+        <div class="question">
+            <p>20. What is the common ratio of the geometric progression: 2, 6, 18, ...?</p>
+            <input type="radio" name="q20" value="3"> 3<br>
+<input type="radio" name="q20" value="2"> 2<br>
+            <input type="radio" name="q20" value="4"> 4
+        </div>
+        <div class="question">
+            <p>21. Evaluate the integral of e^x dx.</p>
+            <input type="radio" name="q21" value="e^x + C"> e^x + C<br>
+            <input type="radio" name="q21" value="x + C"> x + C<br>
+            <input type="radio" name="q21" value="e^x"> e^x
+        </div>
+        <div class="question">
+            <p>22. If f(x) = x^2 + 2x, what is f'(x)?</p>
+            <input type="radio" name="q22" value="2x + 2"> 2x + 2<br>
+            <input type="radio" name="q22" value="2x"> 2x<br>
+            <input type="radio" name="q22" value="x + 2"> x + 2
+        </div>
+        <div class="question">
+            <p>23. Solve for x: 2x + 3 = 7.</p>
+            <input type="radio" name="q23" value="2"> 2<br>
+            <input type="radio" name="q23" value="1"> 1<br>
+            <input type="radio" name="q23" value="3"> 3
+        </div>
+        <div class="question">
+            <p>24. Find the 10th term of the arithmetic progression: 5, 9, 13, ...</p>
+            <input type="radio" name="q24" value="41"> 41<br>
+            <input type="radio" name="q24" value="45"> 45<br>
+            <input type="radio" name="q24" value="39"> 39
+        </div>
+        <div class="question">
+            <p>25. What is the sum of the first 5 terms of the geometric progression: 3, 6, 12, ...?</p>
+            <input type="radio" name="q25" value="186"> 186<br>
+            <input type="radio" name="q25" value="180"> 180<br>
+            <input type="radio" name="q25" value="192"> 192
+        </div>
+        <div class="question">
+            <p>26. Find the derivative of cos(x).</p>
+            <input type="radio" name="q26" value="-sin(x)"> -sin(x)<br>
+            <input type="radio" name="q26" value="sin(x)"> sin(x)<br>
+            <input type="radio" name="q26" value="-cos(x)"> -cos(x)
+        </div>
+        <div class="question">
+            <p>27. What is the integral of 1/x dx?</p>
+            <input type="radio" name="q27" value="ln|x| + C"> ln|x| + C<br>
+            <input type="radio" name="q27" value="x + C"> x + C<br>
+            <input type="radio" name="q27" value="x^2/2 + C"> x^2/2 + C
+        </div>
+        <div class="question">
+            <p>28. If a coin is flipped three times, what is the probability of getting exactly two heads?</p>
+            <input type="radio" name="q28" value="3/8"> 3/8<br>
+            <input type="radio" name="q28" value="1/2"> 1/2<br>
+            <input type="radio" name="q28" value="1/4"> 1/4
+        </div>
+        <div class="question">
+            <p>29. Solve for x in the equation: log(x) = 2.</p>
+            <input type="radio" name="q29" value="100"> 100<br>
+            <input type="radio" name="q29" value="10"> 10<br>
+            <input type="radio" name="q29" value="1000"> 1000
+        </div>
+        <div class="question">
+            <p>30. What is the value of 5 factorial (5!)?</p>
+            <input type="radio" name="q30" value="120"> 120<br>
+            <input type="radio" name="q30" value="100"> 100<br>
+            <input type="radio" name="q30" value="150"> 150
+        </div>
+        <div class="question">
+            <p>31. What is the common difference in the arithmetic sequence: 3, 8, 13, ...?</p>
+            <input type="radio" name="q31" value="5"> 5<br>
+            <input type="radio" name="q31" value="4"> 4<br>
+            <input type="radio" name="q31" value="6"> 6
+        </div>
+        <div class="question">
+            <p>32. If a function f(x) is defined as f(x) = 2x^2 + 3x - 5, what is f''(x)?</p>
+            <input type="radio" name="q32" value="4"> 4<br>
+            <input type="radio" name="q32" value="2"> 2<br>
+            <input type="radio" name="q32" value="6"> 6
+        </div>
+        <div class="question">
+            <p>33. What is the sum of the first 6 terms of the geometric sequence: 2, 4, 8, ...?</p>
+            <input type="radio" name="q33" value="126"> 126<br>
+            <input type="radio" name="q33" value="120"> 120<br>
+            <input type="radio" name="q33" value="110"> 110
+        </div>
+        <div class="question">
+            <p>34. Evaluate the integral of 3x^2 - 2x dx.</p>
+            <input type="radio" name="q34" value="x^3 - x^2 + C"> x^3 - x^2 + C<br>
+            <input type="radio" name="q34" value="x^2 - x + C"> x^2 - x + C<br>
+            <input type="radio" name="q34" value="x^3/3 - x^2 + C"> x^3/3 - x^2 + C
+        </div>
+        <div class="question">
+            <p>35. What is the derivative of x^3 - 4x^2 + 6x?</p>
+            <input type="radio" name="q35" value="3x^2 - 8x + 6"> 3x^2 - 8x + 6<br>
+            <input type="radio" name="q35" value="3x^2 - 8x"> 3x^2 - 8x<br>
+            <input type="radio" name="q35" value="2x^2 - 4x + 6"> 2x^2 - 4x + 6
+        </div>
+        <div class="question">
+            <p>36. What is the probability of drawing a red card from a standard deck of 52 cards?</p>
+            <input type="radio" name="q36" value="1/2"> 1/2<br>
+            <input type="radio" name="q36" value="1/4"> 1/4<br>
+            <input type="radio" name="q36" value="1/3"> 1/3
+        </div>
+        <div class="question">
+            <p>37. Find the 5th term of the arithmetic sequence where the first term is 2 and the common difference is 3.</p>
+            <input type="radio" name="q37" value="14"> 14<br>
+            <input type="radio" name="q37" value="15"> 15<br>
+            <input type="radio" name="q37" value="13"> 13
+        </div>
+        <div class="question">
+            <p>38. Calculate the sum of the first 4 terms of the geometric sequence: 1, 2, 4, ...</p>
+            <input type="radio" name="q38" value="15"> 15<br>
+            <input type="radio" name="q38" value="14"> 14<br>
+            <input type="radio" name="q38" value="16"> 16
+        </div>
+        <div class="question">
+            <p>39. What is the area of a circle with a radius of 7?</p>
+            <input type="radio" name="q39" value="153.94"> 153.94<br>
+<input type="radio" name="q39" value="153.94"> 153.94<br>
+            <input type="radio" name="q39" value="153.86"> 153.86<br>
+            <input type="radio" name="q39" value="148.6"> 148.6
+        </div>
+        <div class="question">
+            <p>40. Find the 6th term of the geometric progression: 5, 10, 20, ...</p>
+            <input type="radio" name="q40" value="320"> 320<br>
+            <input type="radio" name="q40" value="250"> 250<br>
+            <input type="radio" name="q40" value="400"> 400
+        </div>
+        <div class="question">
+            <p>41. What is the integral of 2x e^x dx?</p>
+            <input type="radio" name="q41" value="2xe^x - 2e^x + C"> 2xe^x - 2e^x + C<br>
+            <input type="radio" name="q41" value="2xe^x + C"> 2xe^x + C<br>
+            <input type="radio" name="q41" value="e^x + C"> e^x + C
+        </div>
+        <div class="question">
+            <p>42. What is the derivative of e^x + 5x?</p>
+            <input type="radio" name="q42" value="e^x + 5"> e^x + 5<br>
+            <input type="radio" name="q42" value="e^x + 5x"> e^x + 5x<br>
+            <input type="radio" name="q42" value="e^x"> e^x
+        </div>
+        <div class="question">
+            <p>43. Calculate the probability of drawing a queen from a standard deck of cards.</p>
+            <input type="radio" name="q43" value="1/13"> 1/13<br>
+            <input type="radio" name="q43" value="1/52"> 1/52<br>
+            <input type="radio" name="q43" value="1/4"> 1/4
+        </div>
+        <div class="question">
+            <p>44. Find the sum of the series 1 + 4 + 7 + 10 + ... + 34.</p>
+            <input type="radio" name="q44" value="255"> 255<br>
+            <input type="radio" name="q44" value="270"> 270<br>
+            <input type="radio" name="q44" value="300"> 300
+        </div>
+        <div class="question">
+            <p>45. What is the derivative of x^4 - 3x^3 + 2x - 1?</p>
+            <input type="radio" name="q45" value="4x^3 - 9x^2 + 2"> 4x^3 - 9x^2 + 2<br>
+            <input type="radio" name="q45" value="4x^3 - 6x^2 + 2"> 4x^3 - 6x^2 + 2<br>
+            <input type="radio" name="q45" value="3x^3 - 9x^2 + 2"> 3x^3 - 9x^2 + 2
+        </div>
+        <div class="question">
+            <p>46. Find the 7th term of the arithmetic progression: 10, 20, 30, ...</p>
+            <input type="radio" name="q46" value="60"> 60<br>
+            <input type="radio" name="q46" value="70"> 70<br>
+            <input type="radio" name="q46" value="50"> 50
+        </div>
+        <div class="question">
+            <p>47. Calculate the sum of the geometric series: 3 + 6 + 12 + 24 + ... + 384.</p>
+            <input type="radio" name="q47" value="765"> 765<br>
+            <input type="radio" name="q47" value="768"> 768<br>
+            <input type="radio" name="q47" value="700"> 700
+        </div>
+        <div class="question">
+            <p>48. Find the integral of 5x^3 - 4x dx.</p>
+            <input type="radio" name="q48" value="5x^4/4 - 2x^2 + C"> 5x^4/4 - 2x^2 + C<br>
+            <input type="radio" name="q48" value="5x^4/4 - 4x^2 + C"> 5x^4/4 - 4x^2 + C<br>
+            <input type="radio" name="q48" value="5x^3/3 - 2x + C"> 5x^3/3 - 2x + C
+        </div>
+        <div class="question">
+            <p>49. What is the probability of rolling a number greater than 4 on a fair six-sided die?</p>
+            <input type="radio" name="q49" value="1/3"> 1/3<br>
+            <input type="radio" name="q49" value="1/2"> 1/2<br>
+            <input type="radio" name="q49" value="5/6"> 5/6
+        </div>
+        <div class="question">
+            <p>50. Find the value of x if 2^x = 32.</p>
+            <input type="radio" name="q50" value="5"> 5<br>
+            <input type="radio" name="q50" value="6"> 6<br>
+            <input type="radio" name="q50" value="4"> 4
+        </div>
+
+        <button type="button" onclick="submitTest()">Submit</button>
+    </form>
+
+    <div id="result" style="display: none;">
+        <h2>Your Score: <span id="score"></span></h2>
+    </div>
+
+<script>
+    // Timer setup
+    let timerDuration = 2400; // 1 hour in seconds
+    let timerElement = document.getElementById('timer');
+    let interval = setInterval(() => {
+        let hours = Math.floor(timerDuration / 3600);
+        let minutes = Math.floor((timerDuration % 3600) / 60);
+        let seconds = timerDuration % 60;
+        timerElement.textContent = `Time Left: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        if (timerDuration <= 0) {
+            clearInterval(interval);
+            submitTest();
+        }
+        timerDuration--;
+    }, 1000);
+
+    function submitTest(event) {
+        if (event) event.preventDefault(); // Prevent default form submission
+
+        let form = document.getElementById('testForm');
+        let username = document.getElementById('username').value;
+        let score = 0;
+
+        const answers = {
+            q1: '42',
+            q2: '9',
+            q3: '56',
+            q4: '25',
+            q5: '12',
+            q6: '14',
+            q7: '15',
+            q8: '27',
+            q9: '180',
+            q10: '14',
+            q11: '27',
+            q12: '60',
+            q13: '3',
+            q14: '6',
+            q15: '30',
+            q16: 'x^3/3 + C',
+            q17: 'cos(x)',
+            q18: '1/6',
+            q19: '185',
+            q20: '3',
+            q21: '2xe^x - 2e^x + C',
+            q22: '2x + 2',
+            q23: '2',
+            q24: '41',
+            q25: '180',
+            q26: '-sin(x)',
+            q27: 'ln|x| + C',
+            q28: '3/8',
+            q29: '100',
+            q30: '120',
+            q31: '5',
+            q32: '4',
+            q33: '126',
+            q34: 'x^3/3 - x^2 + C',
+            q35: '3x^2 - 8x + 6',
+            q36: '1/2',
+            q37: '20',
+            q38: '30',
+            q39: '153.94',
+            q40: '320',
+            q41: '2xe^x - 2e^x + C',
+            q42: 'e^x + 5',
+            q43: '1/13',
+            q44: '255',
+            q45: '4x^3 - 9x^2 + 2',
+            q46: '60',
+            q47: '765',
+            q48: '5x^4/4 - 4x^2 + C',
+            q49: '1/3',
+            q50: '5'
+        };
+
+        for (let i = 1; i <= 50; i++) {
+            let q = document.querySelector(`input[name="q${i}"]:checked`);
+            if (q && q.value === answers[`q${i}`]) {
+                score++;
+            }
+        }
+
+        // Save data to Firebase
+        database.ref('results').push({
+            username: username,
+            score: score
+        }).then(() => {
+            // Show alert with score and thank you message
+            alert(`Thank you for completing the test! Your score is ${score}/50.`);
+            
+            // Hide the form
+            form.style.display = 'none';
+        }).catch(error => {
+            console.error('Error saving data to Firebase:', error);
+        });
+    }
+
+    // Ensure the submit button triggers the test submission
+    document.querySelector('button[type="button"]').addEventListener('click', submitTest);
+</script>
+</body>
+</html>
