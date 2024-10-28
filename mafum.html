@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Viewer</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .container h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .container h2 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .open-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .open-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>TEAM MAFUM</h1>
+        <h2>Click the button below to open the PowerPoint presentation</h2>
+        <button class="open-button" onclick="openPPT()">Open Presentation</button>
+    </div>
+
+    <script>
+        function openPPT() {
+            window.location.href = "https://firebasestorage.googleapis.com/v0/b/skin-sugar.appspot.com/o/UNDERRATED%20SOFTWARE%20FOR%20EASE%20OF%20ENGLISH%20LEARNING%20CALL%20HELLOTALK%20-%20FINAL%20VERSION.pptx?alt=media&token=e9c1b6d1-0a7c-48d6-8c3f-2d6c914818d6";
+        }
+    </script>
+
+</body>
+</html>
